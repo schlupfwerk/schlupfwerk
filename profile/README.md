@@ -6,6 +6,12 @@
 </p>
 
 <p align="center">
+  🇩🇪 <b>Deutsch:</b> /ˈʃlʊpfˌvɛʁk/<br>
+  🇬🇧 <b>English:</b> "SHLOOPF-vairk"<br>
+  🇧🇷 <b>Português:</b> "chlúpf-vérk"
+</p>
+
+<p align="center">
   <b>Independent games, hatched with care. 🥚</b><br>
   Family-friendly indie games for Android and iOS, made in Brazil and open to everyone.
 </p>
