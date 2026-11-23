@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://schlupfwerk.com">schlupfwerk.com</a> ·
-  <a href="mailto:contato@schlupfwerk.com">contato@schlupfwerk.com</a> ·
+  <a href="mailto:contact@schlupfwerk.com">contact@schlupfwerk.com</a> ·
   <a href="#-buy-us-a-coffee">☕ Buy us a coffee</a>
 </p>
 
