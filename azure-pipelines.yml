@@ -1,0 +1,135 @@
+# Schlupfwerk site · CI/CD on Azure Pipelines → Azure Static Web Apps (Free). See site/CLAUDE.md.
+#
+#   CI            build, format, tests, publish, CSP hashes → artifact "site"
+#   CD_Production push to main: deploy the artifact to production (environment "production")
+#   CD_Preview    pull request: deploy it to a preview environment pr<N> (environment "preview")
+#
+# Pipeline variable needed (Pipelines → Edit → Variables, "Keep this value secret"):
+#   SWA_DEPLOYMENT_TOKEN  — from the Static Web App in the Azure portal (Manage deployment token).
+#
+# Only changes under site/ (or to this file) run the pipeline: editing the org README doesn't deploy.
+
+trigger:
+  branches:
+    include: [main]
+  paths:
+    include: [site, azure-pipelines.yml]
+
+pr:
+  branches:
+    include: [main]
+  paths:
+    include: [site, azure-pipelines.yml]
+
+# Microsoft-hosted Linux agent (the AzureStaticWebApp task only runs on Linux).
+# Until Microsoft grants the free parallel job to a new Azure DevOps organization, switch this to a
+# self-hosted agent pool (see site/CLAUDE.md).
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+  DOTNET_NOLOGO: 'true'
+  BuildConfiguration: Release
+
+stages:
+  - stage: CI
+    displayName: CI · build, test, publish
+    jobs:
+      - job: build
+        displayName: Build, test and publish
+        steps:
+          - checkout: self
+
+          - task: UseDotNet@2
+            displayName: .NET SDK from site/global.json
+            inputs:
+              useGlobalJson: true
+              workingDirectory: site
+
+          # Lets publish relink the WebAssembly runtime, which makes dotnet.native.wasm much smaller.
+          - script: dotnet workload install wasm-tools
+            displayName: Install wasm-tools workload
+            workingDirectory: site
+
+          - script: dotnet restore Schlupfwerk.slnx
+            displayName: Restore
+            workingDirectory: site
+
+          # Quality gate: warnings fail the build, code style is enforced.
+          - script: dotnet build Schlupfwerk.slnx -c $(BuildConfiguration) --no-restore -warnaserror
+            displayName: Build (warnings as errors)
+            workingDirectory: site
+
+          - script: dotnet format Schlupfwerk.slnx --verify-no-changes --no-restore
+            displayName: Format check
+            workingDirectory: site
+
+          - script: dotnet test --solution Schlupfwerk.slnx -c $(BuildConfiguration) --no-build
+            displayName: Tests
+            workingDirectory: site
+
+          - script: dotnet publish src/Schlupfwerk.Web -c $(BuildConfiguration) -o $(Build.ArtifactStagingDirectory)/publish
+            displayName: Publish Schlupfwerk.Web
+            workingDirectory: site
+
+          # Writes the hashes of index.html's inline scripts (the import map) into the CSP header.
+          - script: dotnet run tools/csp-hashes.cs -- $(Build.ArtifactStagingDirectory)/publish/wwwroot
+            displayName: CSP hashes
+            workingDirectory: site
+
+          - publish: $(Build.ArtifactStagingDirectory)/publish/wwwroot
+            artifact: site
+            displayName: Publish the site as an artifact
+
+  - stage: CD_Production
+    displayName: CD · production
+    dependsOn: CI
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), ne(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      # A deployment job records every release in Pipelines → Environments → production.
+      - deployment: production
+        displayName: Deploy to Azure Static Web Apps
+        environment: production
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: site
+
+                - task: AzureStaticWebApp@0
+                  displayName: Deploy to production
+                  inputs:
+                    workingDirectory: $(Pipeline.Workspace)/site
+                    app_location: /
+                    skip_app_build: true
+                    skip_api_build: true
+                    azure_static_web_apps_api_token: $(SWA_DEPLOYMENT_TOKEN)
+
+  - stage: CD_Preview
+    displayName: CD · preview (pull request)
+    dependsOn: CI
+    # Pull requests from forks never receive secrets, so they build and test but don't deploy.
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'), ne(variables['System.PullRequest.IsFork'], 'True'))
+    jobs:
+      - deployment: preview
+        displayName: Deploy a preview environment
+        environment: preview
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: site
+
+                # The Free plan allows 3 preview environments and they are not removed when the PR closes.
+                - task: AzureStaticWebApp@0
+                  displayName: Deploy preview pr$(System.PullRequest.PullRequestNumber)
+                  inputs:
+                    workingDirectory: $(Pipeline.Workspace)/site
+                    app_location: /
+                    skip_app_build: true
+                    skip_api_build: true
+                    azure_static_web_apps_api_token: $(SWA_DEPLOYMENT_TOKEN)
+                    deployment_environment: pr$(System.PullRequest.PullRequestNumber)

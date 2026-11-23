@@ -1,0 +1,14 @@
+@page "/not-found"
+@layout MainLayout
+@inherits LocalizedComponent
+
+<PageTitle>@T("notfound.seo.title") · Schlupfwerk</PageTitle>
+
+<section class="section">
+    <div class="wrap narrow center">
+        <img class="hero-egg" src="img/egg.svg" alt="" width="80" height="104" />
+        <h1>@T("notfound.title")</h1>
+        <p>@T("notfound.text")</p>
+        <a class="button" href="@PathOf(SitePage.Home)">@T("notfound.back")</a>
+    </div>
+</section>

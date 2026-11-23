@@ -11,7 +11,7 @@ apresenta o estúdio, os valores, os jogos e recebe apoio ("cafezinho").
 - Código **público**, na pasta `site/` do repositório `schlupfwerk/schlupfwerk`
   (o mesmo do README de perfil da org). **Não aceita contribuições.**
 - Domínio principal: https://schlupfwerk.com (o `schlupfwerk.com.br` redireciona para ele)
-- Contato: contato@schlupfwerk.com (também contact@)
+- Contato: contact@schlupfwerk.com (o mesmo endereço nos dois idiomas)
 
 ## Pronúncia do nome
 Schlupfwerk: /ˈʃlʊpfˌvɛʁk/, "SHLOOPF-vairk" (em português: "chlúpf-vérk").
@@ -45,10 +45,56 @@ Em alemão, *Schlupf* é tanto o momento em que o pintinho **sai do ovo** quanto
   `<title>`, `meta description` e Open Graph no `index.html`, e avalie
   pré-renderização estática se o SEO ficar fraco.
 
+## Estrutura e comandos
+```
+azure-pipelines.yml            (na raiz do repositório) CI/CD do site
+site/
+  Schlupfwerk.slnx             solução
+  global.json                  SDK .NET 10 fixo
+  Directory.Build.props        quality gate: warnings viram erro, analyzers, code style
+  Directory.Packages.props     versões dos pacotes (central package management)
+  src/Schlupfwerk.Web/         o site (Blazor WebAssembly standalone)
+    Localization/              Lang, SiteRoutes (caminhos das páginas), Texts + texts.pt.json / texts.en.json
+    Layout/                    MainLayout (cabeçalho, seletor PT/EN, rodapé), BareLayout
+    Components/                LocalizedComponent (base com T("chave")), Seo, SwanRaceCard
+    Pages/                     Home, About, Games, Cafe, Privacy, NotFound, LanguageRedirect ("/" e "/cafe")
+    wwwroot/                   index.html, css/app.css, js/site.js, staticwebapp.config.json, logos, fonte
+  tests/Schlupfwerk.Web.Tests/ xUnit v3 + bUnit
+  tools/csp-hashes.cs          coloca os hashes dos scripts inline do index.html na CSP, depois do publish
+  schlupfwerk-logo/            pacote original do logo (fonte; o site usa cópias em wwwroot)
+```
+
+Rodar e verificar (dentro de `site/`):
+```
+dotnet run --project src/Schlupfwerk.Web          # servidor de desenvolvimento
+dotnet build Schlupfwerk.slnx -warnaserror
+dotnet format Schlupfwerk.slnx --verify-no-changes
+dotnet test --solution Schlupfwerk.slnx
+dotnet publish src/Schlupfwerk.Web -c Release -o artifacts/publish
+dotnet run tools/csp-hashes.cs -- artifacts/publish/wwwroot
+```
+
+Detalhes que já deram problema:
+- Os `texts.*.json` são EmbeddedResource com `WithCulture="false"`; sem isso o `.pt`/`.en` do
+  nome vira assembly satélite e os textos somem.
+- Não use `TrimMode=full`: ele remove os componentes e rotas do próprio site.
+- A CSP não permite script inline. O import map que o .NET escreve no `index.html` só funciona
+  porque `tools/csp-hashes.cs` coloca o hash dele no `staticwebapp.config.json` (com as quebras de
+  linha normalizadas para LF, como o navegador faz). Se aparecer outro script inline, ele precisa
+  passar pelo mesmo caminho.
+- Fonte Nunito self-hosted em `wwwroot/fonts/v1/` (licença OFL ao lado). Arquivo novo de fonte vai
+  para `fonts/v2/`, porque `fonts/v1/*` tem cache imutável.
+- `wwwroot/img/pix-qr.png` é cópia de `profile/pix-qr.png`; um teste garante que são iguais.
+- `wwwroot/sitemap.xml` lista todas as páginas nos dois idiomas; um teste compara com `SiteRoutes`.
+- Página nova: adicione em `SitePage` e `SiteRoutes`, crie o `.razor` com os dois `@page`, os
+  textos nos dois JSON e a entrada no `sitemap.xml`. Os testes apontam o que faltar.
+
 ## Idiomas
 **Português (pt-BR) e inglês (en)**, com um seletor PT/EN no cabeçalho.
-- Rotas sugeridas: `/` (detecta o idioma do navegador), `/pt/...` e `/en/...`
-- Textos em arquivos de recurso (`.resx` ou JSON), nunca fixos nos componentes
+- Rotas: `/` (detecta o idioma do navegador), `/pt/...` e `/en/...`, com o caminho traduzido
+  (`/pt/sobre` ↔ `/en/about`, `/pt/jogos` ↔ `/en/games`, `/pt/privacidade` ↔ `/en/privacy`;
+  o café é `/pt/cafe` e `/en/cafe`, e o link curto `/cafe` leva ao idioma do visitante)
+- Textos em `Localization/texts.pt.json` e `texts.en.json`, nunca fixos nos componentes
 - Guardar a escolha de idioma em `localStorage`, com fallback se não estiver
   disponível
 
@@ -84,7 +130,7 @@ Em alemão, *Schlupf* é tanto o momento em que o pintinho **sai do ovo** quanto
      Apple e do Google
    - as compras são processadas pela App Store e pela Google Play
    - as doações são processadas pelo Ko-fi/Stripe ou pelo Pix
-   - contato: contato@schlupfwerk.com
+   - contato: contact@schlupfwerk.com
    - mencionar a LGPD e um cuidado especial com crianças
 
 Rodapé: links para GitHub (github.com/schlupfwerk), Ko-fi e e-mail, mais

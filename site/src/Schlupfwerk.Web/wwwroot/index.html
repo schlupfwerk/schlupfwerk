@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schlupfwerk · Independent games, hatched with care</title>
+  <meta name="description" content="Schlupfwerk is an independent game studio from Brazil making family-friendly games for Android and iOS: no ads, no data collection, open source. Jogos independentes, chocados com carinho." />
+  <meta name="theme-color" content="#13233A" />
+  <base href="/" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <!-- Open Graph: link previews in chats and social networks (these crawlers don't run Blazor). -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Schlupfwerk" />
+  <meta property="og:title" content="Schlupfwerk · Independent games, hatched with care" />
+  <meta property="og:description" content="Family-friendly indie games for Android and iOS, made in Brazil and open to everyone." />
+  <meta property="og:url" content="https://schlupfwerk.com/" />
+  <meta property="og:image" content="https://schlupfwerk.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Schlupfwerk pixel egg logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" href="fonts/v1/nunito-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" id="webassembly" />
+  <link rel="stylesheet" href="css/app.css" />
+  <script type="importmap"></script>
+  <script src="js/site.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Shown while Blazor loads, and to crawlers that don't run JavaScript. -->
+    <div class="boot">
+      <img src="img/egg.svg" alt="" width="80" height="104" />
+      <h1>Schlupfwerk</h1>
+      <p lang="en">Independent games, hatched with care.</p>
+      <p lang="pt-BR">Jogos independentes, chocados com carinho.</p>
+      <noscript>
+        <p>
+          <a href="https://github.com/schlupfwerk">GitHub</a> ·
+          <a href="https://ko-fi.com/schlupfwerk">Ko-fi</a> ·
+          <a href="mailto:contact@schlupfwerk.com">contact@schlupfwerk.com</a>
+        </p>
+      </noscript>
+    </div>
+  </div>
+
+  <div id="blazor-error-ui" role="alert">
+    <span lang="en">Something went wrong.</span> /
+    <span lang="pt-BR">Algo deu errado.</span>
+    <a href="" class="reload">Reload / Recarregar</a>
+    <button type="button" class="dismiss" aria-label="Close / Fechar">×</button>
+  </div>
+  <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+</body>
+
+</html>

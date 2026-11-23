@@ -1,0 +1,45 @@
+@page "/pt/cafe"
+@page "/en/cafe"
+@inherits LocalizedComponent
+
+<Seo Page="SitePage.Cafe" Title="@T("cafe.seo.title")" />
+
+<section class="section">
+    <div class="wrap narrow">
+        <h1>@T("cafe.title")</h1>
+        <p class="lead">@T("cafe.intro")</p>
+    </div>
+
+    @* Brazilians see Pix first; everyone else sees Ko-fi first. *@
+    <div class="wrap donate">
+        @if (Lang == Lang.Pt)
+        {
+            @PixCard
+            @KofiCard
+        }
+        else
+        {
+            @KofiCard
+            @PixCard
+        }
+    </div>
+
+    <p class="wrap center thanks">@T("cafe.thanks")</p>
+</section>
+
+@code {
+    private RenderFragment KofiCard => @<section class="card donate-card" aria-labelledby="kofi">
+        <h2 id="kofi">@T("cafe.kofi.title")</h2>
+        <p>@T("cafe.kofi.text")</p>
+        <a class="button" href="https://ko-fi.com/schlupfwerk">@T("cafe.kofi.cta")</a>
+    </section>;
+
+    private RenderFragment PixCard => @<section class="card donate-card" aria-labelledby="pix">
+        <h2 id="pix">@T("cafe.pix.title")</h2>
+        <p>@T("cafe.pix.text")</p>
+        <figure class="pix">
+            <img src="img/pix-qr.png" alt="@T("cafe.pix.alt")" width="220" height="220" />
+            <figcaption>@T("cafe.pix.beneficiary")</figcaption>
+        </figure>
+    </section>;
+}

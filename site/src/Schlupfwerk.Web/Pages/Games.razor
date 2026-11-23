@@ -1,0 +1,13 @@
+@page "/pt/jogos"
+@page "/en/games"
+@inherits LocalizedComponent
+
+<Seo Page="SitePage.Games" Title="@T("games.seo.title")" />
+
+<section class="section">
+    <div class="wrap narrow">
+        <h1>@T("games.title")</h1>
+        <p class="lead">@T("games.intro")</p>
+        <SwanRaceCard Detailed="true" />
+    </div>
+</section>

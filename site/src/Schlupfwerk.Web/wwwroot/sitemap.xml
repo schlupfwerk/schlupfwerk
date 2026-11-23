@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every page in both languages. A test checks this list against SiteRoutes. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://schlupfwerk.com/pt</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/pt/sobre</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/sobre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/about" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/sobre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/about" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/pt/jogos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/jogos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/games" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/en/games</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/jogos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/games" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/pt/cafe</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/cafe" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/cafe" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/en/cafe</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/cafe" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/cafe" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/pt/privacidade</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/privacidade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/privacy" />
+  </url>
+  <url>
+    <loc>https://schlupfwerk.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://schlupfwerk.com/pt/privacidade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://schlupfwerk.com/en/privacy" />
+  </url>
+</urlset>

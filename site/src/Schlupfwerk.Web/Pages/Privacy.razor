@@ -1,0 +1,29 @@
+@page "/pt/privacidade"
+@page "/en/privacy"
+@inherits LocalizedComponent
+
+<Seo Page="SitePage.Privacy" Title="@T("privacy.seo.title")" />
+
+<article class="section">
+    <div class="wrap narrow prose">
+        <h1>@T("privacy.title")</h1>
+        <p class="lead">@T("privacy.intro")</p>
+
+        <h2>@T("privacy.site.title")</h2>
+        <p>@T("privacy.site.text")</p>
+        <p>@T("privacy.site.storage")</p>
+
+        @foreach (var section in Sections)
+        {
+            <h2>@T($"privacy.{section}.title")</h2>
+            <p>@T($"privacy.{section}.text")</p>
+        }
+
+        <h2>@T("privacy.contact.title")</h2>
+        <p><a href="mailto:@T("site.email")">@T("site.email")</a></p>
+    </div>
+</article>
+
+@code {
+    private static readonly string[] Sections = ["games", "scores", "purchases", "donations", "children", "lgpd"];
+}

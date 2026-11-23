@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Schlupfwerk.Web/Schlupfwerk.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Schlupfwerk.Web.Tests/Schlupfwerk.Web.Tests.csproj" />
+  </Folder>
+</Solution>

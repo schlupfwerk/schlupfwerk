@@ -1,0 +1,99 @@
+@inherits LayoutComponentBase
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+@inject Texts Texts
+
+<a class="skip-link" href="@($"{_path}#main")">@T("nav.skip")</a>
+
+<header class="site-header">
+    <div class="wrap header-top">
+        <a class="brand" href="@SiteRoutes.PathOf(SitePage.Home, _lang)" aria-label="@T("nav.home.aria")">
+            <img src="img/logo-header.svg" alt="" width="207" height="39" />
+        </a>
+        <nav class="lang-switch" aria-label="@T("lang.label")">
+            @foreach (var lang in Languages)
+            {
+                <a href="@SiteRoutes.PathOf(_page, lang)"
+                   hreflang="@lang.HtmlLang()"
+                   lang="@lang.HtmlLang()"
+                   aria-label="@(lang == Lang.Pt ? "Português" : "English")"
+                   aria-current="@(lang == _lang ? "true" : null)"
+                   @onclick="() => SaveLanguageAsync(lang)">@lang.Code().ToUpperInvariant()</a>
+            }
+        </nav>
+    </div>
+    <nav class="wrap main-nav" aria-label="@T("nav.label")">
+        <ul>
+            @foreach (var (page, key) in MenuPages)
+            {
+                <li>
+                    <a href="@SiteRoutes.PathOf(page, _lang)" aria-current="@(_matched && page == _page ? "page" : null)">@T(key)</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</header>
+
+<main id="main" tabindex="-1">
+    <CascadingValue Value="_lang">
+        @Body
+    </CascadingValue>
+</main>
+
+<footer class="site-footer" aria-label="@T("footer.label")">
+    <div class="crack crack-dark" aria-hidden="true"></div>
+    <div class="wrap footer-inner">
+        <img src="img/logo-header-dark.svg" alt="Schlupfwerk" width="207" height="39" />
+        <ul class="footer-links">
+            <li><a href="https://github.com/schlupfwerk">GitHub</a></li>
+            <li><a href="https://ko-fi.com/schlupfwerk">Ko-fi</a></li>
+            <li><a href="mailto:@T("site.email")">@T("site.email")</a></li>
+            <li><a href="@SiteRoutes.PathOf(SitePage.Privacy, _lang)">@T("nav.privacy")</a></li>
+        </ul>
+        <p class="copyright">© Schlupfwerk</p>
+    </div>
+</footer>
+
+@code {
+    private static readonly Lang[] Languages = [Lang.Pt, Lang.En];
+
+    private static readonly (SitePage Page, string Key)[] MenuPages =
+    [
+        (SitePage.Home, "nav.home"),
+        (SitePage.About, "nav.about"),
+        (SitePage.Games, "nav.games"),
+        (SitePage.Cafe, "nav.cafe"),
+    ];
+
+    private Lang _lang = Lang.En;
+    private SitePage _page = SitePage.Home;
+    private bool _matched;
+    private string _path = "/";
+    private Lang? _documentLang;
+
+    // The router passes a new Body on every navigation, so this runs for every page change.
+    protected override void OnParametersSet() => ReadLocation();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Keep <html lang> in sync with the page, for screen readers and translators.
+        if (_documentLang != _lang)
+        {
+            _documentLang = _lang;
+            await JS.InvokeVoidAsync("schlupfwerk.setDocumentLang", _lang.HtmlLang());
+        }
+    }
+
+    private void ReadLocation()
+    {
+        var relative = Nav.ToBaseRelativePath(Nav.Uri);
+        _path = "/" + relative.Split('?', '#')[0];
+        _matched = SiteRoutes.TryMatch(relative, out _page, out var lang);
+        _lang = _matched ? lang : SiteRoutes.LangOf(relative) ?? Lang.En;
+    }
+
+    private async Task SaveLanguageAsync(Lang lang) =>
+        await JS.InvokeVoidAsync("schlupfwerk.saveLang", lang.Code());
+
+    private string T(string key) => Texts.Get(_lang, key);
+}

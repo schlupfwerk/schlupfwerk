@@ -1,0 +1,39 @@
+@inherits LocalizedComponent
+
+<article class="card game-card">
+    <img class="game-egg" src="img/egg.svg" alt="" width="40" height="52" />
+    <div>
+        @if (Detailed)
+        {
+            <h2>Swan Race <span class="tag">@T("game.swan.working")</span></h2>
+        }
+        else
+        {
+            <h3>Swan Race <span class="tag">@T("game.swan.working")</span></h3>
+        }
+        <p class="status"><span class="visually-hidden">@T("game.status.label"): </span>@T("game.status.egg")</p>
+        <p>@T("game.swan.summary")</p>
+
+        @if (Detailed)
+        {
+            <h3>@T("game.swan.features.title")</h3>
+            <ul class="pixel-list">
+                <li>@T("game.swan.f1")</li>
+                <li>@T("game.swan.f2")</li>
+                <li>@T("game.swan.f3")</li>
+                <li>@T("game.swan.f4")</li>
+            </ul>
+            <a class="button" href="https://github.com/schlupfwerk/swanrace">@T("game.swan.github")</a>
+        }
+        else
+        {
+            <a href="@PathOf(SitePage.Games)">@T("home.current.more")</a>
+        }
+    </div>
+</article>
+
+@code {
+    /// <summary>True on the Games page (h2, feature list, GitHub link); false on the home page.</summary>
+    [Parameter]
+    public bool Detailed { get; set; }
+}

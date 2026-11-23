@@ -1,0 +1,5 @@
+# Normalize line endings under site/; Git checks out native endings per OS.
+* text=auto
+*.png binary
+*.ico binary
+*.woff2 binary

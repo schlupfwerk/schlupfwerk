@@ -1,0 +1,55 @@
+@page "/pt/sobre"
+@page "/en/about"
+@inherits LocalizedComponent
+
+<Seo Page="SitePage.About" Title="@T("about.seo.title")" />
+
+<article class="section">
+    <div class="wrap narrow">
+        <h1>@T("about.title")</h1>
+        <p class="lead">@T("about.p1")</p>
+        <p>@T("about.p2")</p>
+
+        <h2>@T("about.name.title")</h2>
+        <p>@T("about.name.text")</p>
+
+        <h3>@T("about.say.title")</h3>
+        <dl class="say">
+            <dt>🇩🇪 @T("about.say.de")</dt>
+            <dd lang="de">/ˈʃlʊpfˌvɛʁk/</dd>
+            <dt>🇬🇧 @T("about.say.en")</dt>
+            <dd>"SHLOOPF-vairk"</dd>
+            <dt>🇧🇷 @T("about.say.pt")</dt>
+            <dd lang="pt-BR">"chlúpf-vérk"</dd>
+        </dl>
+    </div>
+</article>
+
+<div class="crack" aria-hidden="true"></div>
+
+<section class="section section-shell" aria-labelledby="values">
+    <div class="wrap">
+        <h2 id="values">@T("about.values.title")</h2>
+        <ul class="cards">
+            @foreach (var key in Values)
+            {
+                <li class="card">
+                    <h3>@T($"value.{key}.title")</h3>
+                    <p>@T($"value.{key}.text")</p>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="join">
+    <div class="wrap narrow">
+        <h2 id="join">@T("about.join.title")</h2>
+        <p>@T("about.join.text")</p>
+        <a class="button" href="https://github.com/schlupfwerk">@T("about.join.cta")</a>
+    </div>
+</section>
+
+@code {
+    private static readonly string[] Values = ["family", "noads", "fair", "offline", "open", "light"];
+}

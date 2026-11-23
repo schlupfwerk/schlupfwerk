@@ -1,0 +1,27 @@
+@page "/"
+@page "/cafe"
+@layout BareLayout
+@inject IJSRuntime JS
+@inject NavigationManager Nav
+
+@*
+    Sends "/" and the short link "/cafe" to the visitor's language. js/site.js normally does this before
+    Blazor even starts; this page covers navigations that happen inside the app.
+*@
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+
+        var code = await JS.InvokeAsync<string?>("schlupfwerk.preferredLang");
+        LangExtensions.TryParse(code, out var lang);
+        var page = Nav.ToBaseRelativePath(Nav.Uri).StartsWith("cafe", StringComparison.OrdinalIgnoreCase)
+            ? SitePage.Cafe
+            : SitePage.Home;
+        Nav.NavigateTo(SiteRoutes.PathOf(page, lang), replace: true);
+    }
+}

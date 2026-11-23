@@ -1,0 +1,19 @@
+@inherits LocalizedComponent
+
+<PageTitle>@FullTitle</PageTitle>
+<HeadContent>
+    <link rel="canonical" href="@SiteRoutes.AbsoluteUrlOf(Page, Lang)" />
+    <link rel="alternate" hreflang="pt-BR" href="@SiteRoutes.AbsoluteUrlOf(Page, Lang.Pt)" />
+    <link rel="alternate" hreflang="en" href="@SiteRoutes.AbsoluteUrlOf(Page, Lang.En)" />
+    <link rel="alternate" hreflang="x-default" href="@($"{SiteRoutes.BaseUrl}/")" />
+</HeadContent>
+
+@code {
+    [Parameter, EditorRequired]
+    public SitePage Page { get; set; }
+
+    [Parameter, EditorRequired]
+    public string Title { get; set; } = "";
+
+    private string FullTitle => Page == SitePage.Home ? $"Schlupfwerk · {Title}" : $"{Title} · Schlupfwerk";
+}
