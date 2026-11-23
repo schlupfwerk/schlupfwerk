@@ -1,0 +1,8 @@
+# Shows a "Sponsor" button on every Schlupfwerk repository that has no FUNDING.yml of its own.
+# Uncomment the line for the service you choose and fill in your account or link.
+# Docs: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+
+# ko_fi: schlupfwerk
+# buy_me_a_coffee: schlupfwerk
+# github: schlupfwerk
+# custom: ["https://schlupfwerk.com/cafe"]
