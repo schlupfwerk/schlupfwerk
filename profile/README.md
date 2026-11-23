@@ -59,7 +59,12 @@ models, music, sound, translations, bug reports or just ideas.
 Our games are free of ads. If you enjoy what we make and want to help us keep
 going, you can buy us a coffee. Every cup turns into more games.
 
-👉 *Coming soon at [schlupfwerk.com](https://schlupfwerk.com)*
+<a href="https://ko-fi.com/schlupfwerk"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support us on Ko-fi"></a>
+
+👉 [ko-fi.com/schlupfwerk](https://ko-fi.com/schlupfwerk)
+
+In Brazil? You can also use **Pix**: scan the QR code inside the
+"Em português" section below.
 
 ---
 
@@ -88,7 +93,17 @@ de bugs ou ideias: tudo é bem-vindo. Leia o `CONTRIBUTING.md` do projeto, abra
 uma issue e mande seu pull request. Todo colaborador recebe crédito no jogo. 💛
 
 **Pague um cafezinho ☕**: nossos jogos não têm anúncios. Se você curte o que a
-gente faz, um cafezinho ajuda a manter o ninho funcionando. Em breve em
-[schlupfwerk.com](https://schlupfwerk.com).
+gente faz, um cafezinho ajuda a manter o ninho funcionando:
+[ko-fi.com/schlupfwerk](https://ko-fi.com/schlupfwerk) ou via **Pix**:
+
+<p align="center">
+  <img src="pix-qr.png" alt="QR Code Pix Schlupfwerk" width="220">
+</p>
+
+Pix copia e cola:
+
+```
+00020126360014br.gov.bcb.pix0114692439230001705204000053039865802BR5925MANUEL ANDREZ BRAVO CANDI6006BRASIL62070503***6304A49B
+```
 
 </details>
