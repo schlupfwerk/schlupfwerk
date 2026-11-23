@@ -97,13 +97,8 @@ gente faz, um cafezinho ajuda a manter o ninho funcionando:
 [ko-fi.com/schlupfwerk](https://ko-fi.com/schlupfwerk) ou via **Pix**:
 
 <p align="center">
-  <img src="pix-qr.png" alt="QR Code Pix Schlupfwerk" width="220">
+  <img src="pix-qr.png" alt="QR Code Pix Schlupfwerk" width="220"><br>
+  <sub>Beneficiário: MANUEL ANDREZ BRAVO CANDIA CONSULTORIA EM TI LTDA</sub>
 </p>
-
-Pix copia e cola:
-
-```
-00020126580014br.gov.bcb.pix0136ad349d7a-7922-49e9-9e87-9dfa4535a3755204000053039865802BR5924BRAVO CANDIA CONSULTORIA6006BRASIL62070503***630401A8
-```
 
 </details>
