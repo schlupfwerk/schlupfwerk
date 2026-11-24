@@ -120,9 +120,12 @@ Detalhes que já deram problema:
 4. **Café** (`/cafe`): botão do Ko-fi (https://ko-fi.com/schlupfwerk) para o público
    internacional e **QR Code do Pix** para brasileiros.
    - Use a imagem pronta `profile/pix-qr.png` (na raiz do repositório), a mesma
-     do README, já testada com pagamento real. Não gere outro QR Code.
-   - Chave aleatória `ad349d7a-7922-49e9-9e87-9dfa4535a375`, sem valor fixo
-     (quem doa escolhe quanto).
+     do README. Não gere outro QR Code sem o Manuel pedir.
+   - Chave aleatória `d5555f67-5b99-4471-a9a0-3af5881e61f9`, sem valor fixo
+     (quem doa escolhe quanto). Payload (BR Code estático):
+     `00020126580014br.gov.bcb.pix0136d5555f67-5b99-4471-a9a0-3af5881e61f95204000053039865802BR5924BRAVO CANDIA CONSULTORIA6006BRASIL62070503***6304028B`
+     Se a chave mudar de novo, gere o QR só trocando a chave (nome, cidade e txid `***`
+     iguais, CRC16-CCITT recalculado) e atualize as duas cópias do PNG.
    - Abaixo do QR Code, mostrar: "Beneficiário: MANUEL ANDREZ BRAVO CANDIA
      CONSULTORIA EM TI LTDA".
    - Sem código "copia e cola": só o QR Code, para ficar limpo.
