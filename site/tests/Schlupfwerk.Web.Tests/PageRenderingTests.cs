@@ -69,13 +69,17 @@ public sealed class PageRenderingTests : BunitContext
     [Theory]
     [InlineData(Lang.Pt)]
     [InlineData(Lang.En)]
-    public void Cafe_KofiButton_IsInTheCenteredActionRow(Lang lang)
+    public void Cafe_KofiButton_IsCentered(Lang lang)
     {
         var cut = Render<Cafe>(p => p.AddCascadingValue(lang));
 
-        // .donate-action centers the button (app.css), like the Pix QR code in the other card.
-        var button = cut.Find(".donate-action a.button");
+        // Centered like the Pix QR code in the other card, through the shared .center utility.
+        var button = cut.Find("#kofi ~ p.center > a.button");
         Assert.Equal("https://ko-fi.com/schlupfwerk", button.GetAttribute("href"));
+
+        // bUnit doesn't apply CSS, so check that the utility still centers.
+        var css = File.ReadAllText(Path.Combine(SiteFiles.WebRoot, "css", "app.css"));
+        Assert.Matches(@"\.center\s*\{\s*text-align:\s*center;\s*\}", css);
     }
 
     [Fact]

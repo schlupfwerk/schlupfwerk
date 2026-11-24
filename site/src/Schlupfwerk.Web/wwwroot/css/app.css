@@ -429,11 +429,6 @@ main:focus {
   margin-top: 0;
 }
 
-/* Centered like the Pix QR code in the card next to it. */
-.donate-action {
-  text-align: center;
-}
-
 .pix {
   margin: 1rem 0 0;
   text-align: center;
