@@ -66,6 +66,18 @@ public sealed class PageRenderingTests : BunitContext
         Assert.Equal(first, cut.FindAll(".donate-card h2")[0].Id);
     }
 
+    [Theory]
+    [InlineData(Lang.Pt)]
+    [InlineData(Lang.En)]
+    public void Cafe_KofiButton_IsInTheCenteredActionRow(Lang lang)
+    {
+        var cut = Render<Cafe>(p => p.AddCascadingValue(lang));
+
+        // .donate-action centers the button (app.css), like the Pix QR code in the other card.
+        var button = cut.Find(".donate-action a.button");
+        Assert.Equal("https://ko-fi.com/schlupfwerk", button.GetAttribute("href"));
+    }
+
     [Fact]
     public void Cafe_ShowsThePixQrCode_WithTheBeneficiary()
     {
