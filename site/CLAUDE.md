@@ -62,7 +62,12 @@ site/
   tests/Schlupfwerk.Web.Tests/ xUnit v3 + bUnit
   tools/csp-hashes.cs          coloca os hashes dos scripts inline do index.html na CSP, depois do publish
   schlupfwerk-logo/            pacote original do logo (fonte; o site usa cópias em wwwroot)
+  docs/architecture/adr/       decisões de arquitetura (ADRs), com o porquê de cada escolha
 ```
+
+Antes de mudar algo estrutural (hospedagem, deploy, rotas, CSP, domínios, privacidade, Pix), leia o
+ADR correspondente em `docs/architecture/adr/`. Decisão nova ou revista: escreva ou atualize o ADR
+no mesmo commit.
 
 Rodar e verificar (dentro de `site/`):
 ```
