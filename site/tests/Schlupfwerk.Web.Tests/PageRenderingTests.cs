@@ -66,6 +66,22 @@ public sealed class PageRenderingTests : BunitContext
         Assert.Equal(first, cut.FindAll(".donate-card h2")[0].Id);
     }
 
+    [Theory]
+    [InlineData(Lang.Pt)]
+    [InlineData(Lang.En)]
+    public void Cafe_KofiButton_IsCentered(Lang lang)
+    {
+        var cut = Render<Cafe>(p => p.AddCascadingValue(lang));
+
+        // Centered like the Pix QR code in the other card, through the shared .center utility.
+        var button = cut.Find("#kofi ~ p.center > a.button");
+        Assert.Equal("https://ko-fi.com/schlupfwerk", button.GetAttribute("href"));
+
+        // bUnit doesn't apply CSS, so check that the utility still centers.
+        var css = File.ReadAllText(Path.Combine(SiteFiles.WebRoot, "css", "app.css"));
+        Assert.Matches(@"\.center\s*\{\s*text-align:\s*center;\s*\}", css);
+    }
+
     [Fact]
     public void Cafe_ShowsThePixQrCode_WithTheBeneficiary()
     {
