@@ -37,7 +37,7 @@ and make them go fast.
 ## 🎮 What we believe in
 
 - **Family friendly**: games kids can play and parents can trust.
-- **No ads, no data collection**: your time and your privacy are not our product.
+- **No ads, no tracking**: no analytics, no selling data. Your time and your privacy are not our product.
 - **Fair play**: only cosmetic purchases. Nothing you can buy makes you win.
 - **Offline first**: our games work without internet. Online features are optional.
 - **Open source**: our games' code is free software (GPLv3). Read it, learn from
@@ -88,7 +88,7 @@ ideias e colocamos elas para correr.
 
 **No que acreditamos**
 - **Para toda a família**: jogos que crianças podem jogar e pais podem confiar.
-- **Sem anúncios e sem coleta de dados.**
+- **Sem anúncios e sem rastreamento.**
 - **Jogo justo**: só compras cosméticas, nada que dê vantagem.
 - **Offline primeiro**: funcionam sem internet; recursos online são opcionais.
 - **Código aberto** (GPLv3): leia, aprenda, melhore.

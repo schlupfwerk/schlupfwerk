@@ -103,7 +103,8 @@ Detalhes que já deram problema:
    (em PT: "Jogos independentes, chocados com carinho."), os destaques e o jogo atual.
 2. **Sobre / Manifesto**: quem somos e os valores:
    - para toda a família
-   - sem anúncios e sem coleta de dados
+   - sem anúncios e sem rastreamento (não diga "sem coleta de dados": os recursos
+     online usam dados, que ficam com a Apple e o Google, não com o estúdio)
    - jogo justo: só compras cosméticas, nada que dê vantagem
    - offline primeiro, com recursos online opcionais
    - código aberto (GPLv3) e aberto a colaboração no GitHub
@@ -112,6 +113,10 @@ Detalhes que já deram problema:
    Corrida 3D em que um cisne desce montanhas esquiando, corre, nada (decolando ao
    correr sobre a água) e voa. Pistas: Suíça, Alemanha e Rio de Janeiro.
    Bots com IA, funciona offline, skins cosméticas. Link: github.com/schlupfwerk/swanrace
+   Plano da 1.0, sem servidor do estúdio: single player contra a IA; skins e moeda do jogo
+   (ganha jogando ou comprada pela loja), com o progresso salvo no iCloud / Play Games;
+   placar entre amigos pelo Game Center / Play Games; convite por link (WhatsApp).
+   Multiplayer e indicação com recompensa ficam para a 2.0. Não ler a agenda de contatos.
 4. **Café** (`/cafe`): botão do Ko-fi (https://ko-fi.com/schlupfwerk) para o público
    internacional e **QR Code do Pix** para brasileiros.
    - Use a imagem pronta `profile/pix-qr.png` (na raiz do repositório), a mesma
@@ -124,10 +129,12 @@ Detalhes que já deram problema:
    - O CNPJ **não** está cadastrado como chave Pix; não use.
 5. **Privacidade**: política simples e honesta, exigida pelas lojas:
    - o site não usa cookies de rastreamento nem analytics
-   - os jogos não coletam dados pessoais
-   - placares e conquistas opcionais usam o Game Center (iOS) e o Google Play
-     Games (Android), que guardam apelido e pontuação sob as políticas da
-     Apple e do Google
+   - os jogos não enviam dados pessoais ao estúdio, nem exigem conta
+   - placares (inclusive entre amigos), conquistas e progresso na nuvem são opcionais
+     e usam o Game Center e o iCloud (iOS) ou o Google Play Games (Android), que guardam
+     apelido, amigos, pontuação e progresso sob as políticas da Apple e do Google
+   - se um recurso novo precisar de outros dados (ex.: multiplayer na 2.0), a política
+     diz quais antes de ele existir
    - as compras são processadas pela App Store e pela Google Play
    - as doações são processadas pelo Ko-fi/Stripe ou pelo Pix
    - contato: contact@schlupfwerk.com
