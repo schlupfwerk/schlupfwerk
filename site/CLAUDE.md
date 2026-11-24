@@ -36,8 +36,9 @@ Em alemão, *Schlupf* é tanto o momento em que o pintinho **sai do ovo** quanto
     apagados sozinhos
   - organização nova do Azure DevOps não tem job paralelo gratuito até a
     Microsoft aprovar o pedido; até lá, usar um agente self-hosted
-- `staticwebapp.config.json` com `navigationFallback` para `index.html`
-  (exclua `/_framework/*`, `/css/*`, `/img/*` e arquivos com extensão)
+- `staticwebapp.config.json` **sem** `navigationFallback` (ele responde 200 para qualquer
+  caminho): cada página tem uma rota com `rewrite` para `/index.html`, e o resto cai no
+  `responseOverrides` 404, que entrega o `index.html` com status 404 (o Blazor mostra NotFound)
 - Sem backend, sem banco de dados, **sem cookies de rastreamento nem analytics**
 - Atenção a desempenho: habilitar trimming e compressão, carregar o mínimo
   possível. O site precisa abrir rápido no celular.
@@ -87,7 +88,8 @@ Detalhes que já deram problema:
 - `wwwroot/img/pix-qr.png` é cópia de `profile/pix-qr.png`; um teste garante que são iguais.
 - `wwwroot/sitemap.xml` lista todas as páginas nos dois idiomas; um teste compara com `SiteRoutes`.
 - Página nova: adicione em `SitePage` e `SiteRoutes`, crie o `.razor` com os dois `@page`, os
-  textos nos dois JSON e a entrada no `sitemap.xml`. Os testes apontam o que faltar.
+  textos nos dois JSON, a entrada no `sitemap.xml` e as duas rotas no `staticwebapp.config.json`
+  (sem elas a página responde 404). Os testes apontam o que faltar.
 
 ## Idiomas
 **Português (pt-BR) e inglês (en)**, com um seletor PT/EN no cabeçalho.

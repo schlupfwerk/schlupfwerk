@@ -31,13 +31,40 @@ public sealed class StaticFilesTests
     }
 
     [Fact]
-    public void StaticWebAppConfig_HasTheSpaFallback_AndTheCspPlaceholder()
+    public void StaticWebAppConfig_ServesEveryPage_AndUnknownPathsAs404()
     {
-        var path = Path.Combine(SiteFiles.WebRoot, "staticwebapp.config.json");
-        using var json = JsonDocument.Parse(File.ReadAllText(path));
+        using var json = ReadStaticWebAppConfig();
         var root = json.RootElement;
 
-        Assert.Equal("/index.html", root.GetProperty("navigationFallback").GetProperty("rewrite").GetString());
+        // No navigation fallback: it would answer 200 for any path, so search engines would index
+        // the "not found" page. Known pages are listed one by one instead.
+        Assert.False(root.TryGetProperty("navigationFallback", out _));
+
+        var rewritten =
+            from route in root.GetProperty("routes").EnumerateArray()
+            where route.TryGetProperty("rewrite", out var target) && target.GetString() == "/index.html"
+            select route.GetProperty("route").GetString();
+
+        var expected =
+            (from page in SiteRoutes.AllPages
+             from lang in new[] { Lang.Pt, Lang.En }
+             select SiteRoutes.PathOf(page, lang))
+            .Append("/cafe"); // short link, redirected to the visitor's language by js/site.js
+
+        Assert.Equal(expected.Order(), rewritten.Order());
+
+        // Anything else gets the app (which shows the NotFound page) with a real 404 status.
+        var notFound = root.GetProperty("responseOverrides").GetProperty("404");
+        Assert.Equal("/index.html", notFound.GetProperty("rewrite").GetString());
+        Assert.Equal(404, notFound.GetProperty("statusCode").GetInt32());
+    }
+
+    [Fact]
+    public void StaticWebAppConfig_HasTheCspPlaceholder()
+    {
+        using var json = ReadStaticWebAppConfig();
+        var root = json.RootElement;
+
         var csp = root.GetProperty("globalHeaders").GetProperty("Content-Security-Policy").GetString();
         // tools/csp-hashes.cs swaps the placeholder for the hashes of the inline scripts at publish time.
         Assert.Contains("__INLINE_SCRIPT_HASHES__", csp, StringComparison.Ordinal);
@@ -55,4 +82,7 @@ public sealed class StaticFilesTests
     [InlineData("fonts/v1/nunito-latin-wght.woff2")]
     public void BrandFiles_ArePublished(string file) =>
         Assert.True(File.Exists(Path.Combine(SiteFiles.WebRoot, file)), file);
+
+    private static JsonDocument ReadStaticWebAppConfig() =>
+        JsonDocument.Parse(File.ReadAllText(Path.Combine(SiteFiles.WebRoot, "staticwebapp.config.json")));
 }

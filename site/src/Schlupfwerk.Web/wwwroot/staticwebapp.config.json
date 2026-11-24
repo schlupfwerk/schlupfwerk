@@ -1,17 +1,18 @@
 {
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": [
-      "/_framework/*",
-      "/css/*",
-      "/img/*",
-      "/js/*",
-      "/fonts/*",
-      "*.{png,svg,ico,css,js,json,wasm,dat,woff2,txt,xml,webmanifest,br,gz}"
-    ]
-  },
+  "trailingSlash": "never",
   "routes": [
+    { "route": "/cafe", "rewrite": "/index.html" },
+    { "route": "/pt", "rewrite": "/index.html" },
+    { "route": "/pt/sobre", "rewrite": "/index.html" },
+    { "route": "/pt/jogos", "rewrite": "/index.html" },
+    { "route": "/pt/cafe", "rewrite": "/index.html" },
+    { "route": "/pt/privacidade", "rewrite": "/index.html" },
+    { "route": "/en", "rewrite": "/index.html" },
+    { "route": "/en/about", "rewrite": "/index.html" },
+    { "route": "/en/games", "rewrite": "/index.html" },
+    { "route": "/en/cafe", "rewrite": "/index.html" },
+    { "route": "/en/privacy", "rewrite": "/index.html" },
     {
       "route": "/_framework/*",
       "headers": { "Cache-Control": "public, max-age=31536000, immutable" }
@@ -25,6 +26,9 @@
       "headers": { "Cache-Control": "no-cache" }
     }
   ],
+  "responseOverrides": {
+    "404": { "rewrite": "/index.html", "statusCode": 404 }
+  },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin-when-cross-origin",
