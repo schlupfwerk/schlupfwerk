@@ -38,7 +38,7 @@ and make them go fast.
 
 - **Family friendly**: games kids can play and parents can trust.
 - **No ads, no tracking**: no analytics, no selling data. Your time and your privacy are not our product.
-- **Fair play**: only cosmetic purchases. Nothing you can buy makes you win.
+- **Fair play**: nothing that gives an advantage is for sale. Swan Race is completely free, with no purchases.
 - **Offline first**: our games work without internet. Online features are optional.
 - **Open source**: our games' code is free software (GPLv3). Read it, learn from
   it, improve it.
@@ -48,7 +48,7 @@ and make them go fast.
 
 | Project | What it is | Status |
 |---|---|---|
-| [**Swan Race**](https://github.com/schlupfwerk/swanrace) *(working title)* | A 3D racing game: ski down, run, swim and fly as a swan across Switzerland, Germany and Rio de Janeiro | 🥚 In the egg |
+| [**Swan Race**](https://github.com/schlupfwerk/schlupfwerk_swanrace) *(working title)* | A free 3D racing game for the whole family: a clumsy swan races up to 11 AI swans on a desert island, with ramps, bridges and a big wardrobe | 🐣 Alpha 0.0.5, playable on Windows |
 | [schlupfwerk.com](https://schlupfwerk.com) | Our website, built with .NET 10 and Blazor | 🛠️ Coming soon |
 
 ## 🤝 Contribute
@@ -89,7 +89,7 @@ ideias e colocamos elas para correr.
 **No que acreditamos**
 - **Para toda a família**: jogos que crianças podem jogar e pais podem confiar.
 - **Sem anúncios e sem rastreamento.**
-- **Jogo justo**: só compras cosméticas, nada que dê vantagem.
+- **Jogo justo**: nada que dê vantagem está à venda. O Swan Race é totalmente gratuito, sem compras.
 - **Offline primeiro**: funcionam sem internet; recursos online são opcionais.
 - **Código aberto** (GPLv3): leia, aprenda, melhore.
 - **Leves**: downloads pequenos que rodam bem em celulares comuns.

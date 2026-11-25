@@ -53,6 +53,9 @@ public sealed class StaticFilesTests
     [InlineData("img/icon-192.png")]
     [InlineData("img/icon-512.png")]
     [InlineData("fonts/v1/nunito-latin-wght.woff2")]
+    [InlineData("img/swanrace/swanrace-race.webp")]
+    [InlineData("img/swanrace/swanrace-customize.webp")]
+    [InlineData("img/swanrace/swanrace-title.webp")]
     public void BrandFiles_ArePublished(string file) =>
         Assert.True(File.Exists(Path.Combine(SiteFiles.WebRoot, file)), file);
 }

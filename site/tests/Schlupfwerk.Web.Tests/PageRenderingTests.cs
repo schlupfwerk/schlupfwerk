@@ -57,6 +57,20 @@ public sealed class PageRenderingTests : BunitContext
     }
 
     [Theory]
+    [InlineData(Lang.Pt)]
+    [InlineData(Lang.En)]
+    public void Games_ShowsScreenshotsWithAltText_TheStores_AndTheGameRepo(Lang lang)
+    {
+        var cut = Render<Games>(p => p.AddCascadingValue(lang));
+
+        var shots = cut.FindAll(".shot img");
+        Assert.Equal(3, shots.Count);
+        Assert.All(shots, img => Assert.False(string.IsNullOrWhiteSpace(img.GetAttribute("alt"))));
+        Assert.Equal(["Google Play", "App Store", "Steam"], cut.FindAll(".store-name").Select(s => s.TextContent));
+        Assert.Contains(cut.FindAll("a"), a => a.GetAttribute("href") == "https://github.com/schlupfwerk/schlupfwerk_swanrace");
+    }
+
+    [Theory]
     [InlineData(Lang.Pt, "pix")]
     [InlineData(Lang.En, "kofi")]
     public void Cafe_ShowsTheVisitorsUsualOptionFirst(Lang lang, string first)
