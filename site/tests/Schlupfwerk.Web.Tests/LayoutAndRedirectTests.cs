@@ -42,6 +42,18 @@ public sealed class LayoutAndRedirectTests : BunitContext
         Assert.Equal("Games", current.TextContent);
     }
 
+    [Theory]
+    [InlineData("/pt/jogos", "/pt/cafe", "Pague um café")]
+    [InlineData("/en/about", "/en/cafe", "Buy us a coffee")]
+    public void Header_HasTheCoffeeButton_ToTheCafePageInTheSameLanguage(string path, string cafe, string label)
+    {
+        var cut = RenderLayoutAt(path);
+
+        var button = cut.Find(".header-top .cafe-cta");
+        Assert.Equal(cafe, button.GetAttribute("href"));
+        Assert.Equal(label, button.GetAttribute("aria-label"));
+    }
+
     [Fact]
     public void Layout_SetsTheHtmlLang()
     {

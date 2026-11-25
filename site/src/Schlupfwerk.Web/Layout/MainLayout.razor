@@ -10,17 +10,25 @@
         <a class="brand" href="@SiteRoutes.PathOf(SitePage.Home, _lang)" aria-label="@T("nav.home.aria")">
             <img src="img/logo-header.svg" alt="" width="207" height="39" />
         </a>
-        <nav class="lang-switch" aria-label="@T("lang.label")">
-            @foreach (var lang in Languages)
-            {
-                <a href="@SiteRoutes.PathOf(_page, lang)"
-                   hreflang="@lang.HtmlLang()"
-                   lang="@lang.HtmlLang()"
-                   aria-label="@(lang == Lang.Pt ? "Português" : "English")"
-                   aria-current="@(lang == _lang ? "true" : null)"
-                   @onclick="() => SaveLanguageAsync(lang)">@lang.Code().ToUpperInvariant()</a>
-            }
-        </nav>
+        <div class="header-actions">
+            @* Always in sight, so supporters never have to look for it. *@
+            <a class="cafe-cta" href="@SiteRoutes.PathOf(SitePage.Cafe, _lang)" aria-label="@T("nav.cafe.cta")">
+                <span aria-hidden="true">☕</span>
+                <span class="cafe-cta-long">@T("nav.cafe.cta")</span>
+                <span class="cafe-cta-short" aria-hidden="true">@T("nav.cafe.short")</span>
+            </a>
+            <nav class="lang-switch" aria-label="@T("lang.label")">
+                @foreach (var lang in Languages)
+                {
+                    <a href="@SiteRoutes.PathOf(_page, lang)"
+                       hreflang="@lang.HtmlLang()"
+                       lang="@lang.HtmlLang()"
+                       aria-label="@(lang == Lang.Pt ? "Português" : "English")"
+                       aria-current="@(lang == _lang ? "true" : null)"
+                       @onclick="() => SaveLanguageAsync(lang)">@lang.Code().ToUpperInvariant()</a>
+                }
+            </nav>
+        </div>
     </div>
     <nav class="wrap main-nav" aria-label="@T("nav.label")">
         <ul>

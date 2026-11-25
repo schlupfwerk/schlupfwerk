@@ -22,9 +22,10 @@ LGPD (art. 14) and the stores' family rules apply.
   A banner about cookies that don't exist would only get in the way.
 - **The games' 1.0 plan** keeps that promise without a studio server:
   - single player against AI, works offline, no account;
-  - cosmetic skins and an in-game currency (earned by playing or bought through the stores); the stores
-    process payments and report owned items (StoreKit 2 / Play Billing); progress is saved in iCloud or
-    Google Play Games;
+  - ~~cosmetic skins and an in-game currency (earned by playing or bought through the stores)~~
+    **Revised 2026-11-25: Swan Race is completely free, with no purchases**; everything is unlocked from the
+    start. If a game ever sells something, the stores process the payment (StoreKit 2 / Play Billing / Steam).
+    Progress is saved in iCloud or Google Play Games;
   - friends-only leaderboards and achievements through Game Center and Google Play Games;
   - invitations by share link (e.g. WhatsApp). **The game never reads the phone's contacts.**
   - Real-time multiplayer and referral rewards are **2.0**: they need a server and would add data (IP,
@@ -45,4 +46,6 @@ LGPD (art. 14) and the stores' family rules apply.
 
 - ✅ The value statement, the privacy page, the README and `meta description` say the same, true thing
 - ✅ No personal data to store, secure or delete on the studio side
-- ⚠️ Every new online feature needs a privacy review and a policy update before it ships
+- ⚠️ Every new online feature needs a privacy review and a policy update before it ships. That includes
+  any analytics or crash reporting (e.g. Firebase) in the games: it would change the "no tracking" promise,
+  so it needs a new ADR and a privacy page update before it ships

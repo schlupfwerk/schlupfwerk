@@ -2,7 +2,7 @@
 
 <article class="card game-card">
     <img class="game-egg" src="img/egg.svg" alt="" width="40" height="52" />
-    <div>
+    <div class="game-body">
         @if (Detailed)
         {
             <h2>Swan Race <span class="tag">@T("game.swan.working")</span></h2>
@@ -16,14 +16,54 @@
 
         @if (Detailed)
         {
+            <p class="free-note"><strong>@T("game.swan.free.title").</strong> @T("game.swan.free.text")</p>
+
+            <figure class="shot">
+                <img src="img/swanrace/swanrace-race.webp" alt="@T("game.swan.shot.race.alt")"
+                     width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>@T("game.swan.shot.race.caption")</figcaption>
+            </figure>
+
+            <h3>@T("game.swan.ai.title")</h3>
+            <p>@T("game.swan.ai.text")</p>
+
+            <h3>@T("game.swan.custom.title")</h3>
+            <p>@T("game.swan.custom.text")</p>
+            <figure class="shot">
+                <img src="img/swanrace/swanrace-customize.webp" alt="@T("game.swan.shot.custom.alt")"
+                     width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>@T("game.swan.shot.custom.caption")</figcaption>
+            </figure>
+
             <h3>@T("game.swan.features.title")</h3>
             <ul class="pixel-list">
-                <li>@T("game.swan.f1")</li>
-                <li>@T("game.swan.f2")</li>
-                <li>@T("game.swan.f3")</li>
-                <li>@T("game.swan.f4")</li>
+                @foreach (var n in Enumerable.Range(1, 6))
+                {
+                    <li>@T($"game.swan.f{n}")</li>
+                }
             </ul>
-            <a class="button" href="https://github.com/schlupfwerk/swanrace">@T("game.swan.github")</a>
+
+            <figure class="shot">
+                <img src="img/swanrace/swanrace-title.webp" alt="@T("game.swan.shot.title.alt")"
+                     width="1280" height="720" loading="lazy" decoding="async" />
+                <figcaption>@T("game.swan.shot.title.caption")</figcaption>
+            </figure>
+
+            <h3>@T("game.swan.stores.title")</h3>
+            @* Not links yet: the game isn't in any store. The official store badges replace these
+               once there is a page to link to (their brand rules ask for a working link). *@
+            <ul class="stores">
+                @foreach (var store in Stores)
+                {
+                    <li class="store">
+                        <span class="store-name">@store</span>
+                        <span class="store-soon">@T("game.swan.stores.soon")</span>
+                    </li>
+                }
+            </ul>
+            <p class="muted">@T("game.swan.stores.note")</p>
+
+            <a class="button" href="https://github.com/schlupfwerk/schlupfwerk_swanrace">@T("game.swan.github")</a>
         }
         else
         {
@@ -33,7 +73,9 @@
 </article>
 
 @code {
-    /// <summary>True on the Games page (h2, feature list, GitHub link); false on the home page.</summary>
+    private static readonly string[] Stores = ["Google Play", "App Store", "Steam"];
+
+    /// <summary>True on the Games page (full details, screenshots, stores); false on the home page.</summary>
     [Parameter]
     public bool Detailed { get; set; }
 }

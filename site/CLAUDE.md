@@ -110,18 +110,25 @@ Detalhes que já deram problema:
    - para toda a família
    - sem anúncios e sem rastreamento (não diga "sem coleta de dados": os recursos
      online usam dados, que ficam com a Apple e o Google, não com o estúdio)
-   - jogo justo: só compras cosméticas, nada que dê vantagem
+   - jogo justo: nada que dê vantagem está à venda; o Swan Race é totalmente gratuito, sem compras
    - offline primeiro, com recursos online opcionais
    - código aberto (GPLv3) e aberto a colaboração no GitHub
    - jogos leves, que rodam bem em celulares comuns
-3. **Jogos**: por enquanto, o **Swan Race** (nome provisório), com o status "🥚 ainda no ovo".
-   Corrida 3D em que um cisne desce montanhas esquiando, corre, nada (decolando ao
-   correr sobre a água) e voa. Pistas: Suíça, Alemanha e Rio de Janeiro.
-   Bots com IA, funciona offline, skins cosméticas. Link: github.com/schlupfwerk/swanrace
-   Plano da 1.0, sem servidor do estúdio: single player contra a IA; skins e moeda do jogo
-   (ganha jogando ou comprada pela loja), com o progresso salvo no iCloud / Play Games;
-   placar entre amigos pelo Game Center / Play Games; convite por link (WhatsApp).
-   Multiplayer e indicação com recompensa ficam para a 2.0. Não ler a agenda de contatos.
+3. **Jogos**: por enquanto, o **Swan Race** (nome provisório). Mostra o status com a **versão atual**
+   (hoje "🐣 Alpha 0.0.5: já dá para jogar no Windows"; atualize a cada versão nova do jogo), o resumo,
+   o destaque **"Totalmente grátis"** (sem anúncios, sem compras, nada para desbloquear pagando), a
+   seção **Adversários com IA** (até 11 bots com habilidade sorteada pela dificuldade, mesmas regras e
+   física do jogador), **Monte o seu cisne** (personalização), a lista do que já tem no jogo, três
+   **capturas** (`wwwroot/img/swanrace/*.webp`, 1280×720, geradas no próprio jogo) e **Onde baixar**:
+   Google Play, App Store e Steam como botões tracejados "em breve", **sem logo oficial e sem link**
+   até o jogo estar publicado (as regras de marca da Apple e do Google pedem um link que funcione;
+   aí entram os selos oficiais). Link do código: github.com/schlupfwerk/schlupfwerk_swanrace.
+   Hoje o jogo tem uma pista (Ilha Deserta); o plano antigo de Suíça, Alemanha e Rio continua no
+   repositório do jogo. Sem servidor do estúdio: placar entre amigos pelo Game Center / Play Games;
+   convite por link (WhatsApp). Multiplayer e indicação com recompensa ficam para a 2.0. Não ler a
+   agenda de contatos.
+   - **Cabeçalho:** botão amarelo **"☕ Pague um café"** no topo direito de todas as páginas, levando à
+     página do café no idioma da página (em telas estreitas vira "☕ Café" e desce para baixo do logo).
 4. **Café** (`/cafe`): botão do Ko-fi (https://ko-fi.com/schlupfwerk) para o público
    internacional e **QR Code do Pix** para brasileiros.
    - Use a imagem pronta `profile/pix-qr.png` (na raiz do repositório), a mesma
