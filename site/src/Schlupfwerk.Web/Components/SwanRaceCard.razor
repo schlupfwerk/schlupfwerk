@@ -3,83 +3,65 @@
 <article class="card game-card">
     <img class="game-egg" src="img/egg.svg" alt="" width="40" height="52" />
     <div class="game-body">
-        @if (Detailed)
-        {
-            <h2>Swan Race</h2>
-        }
-        else
-        {
-            <h3>Swan Race</h3>
-        }
+        <h2>Swan Race</h2>
         <p class="status"><span class="visually-hidden">@T("game.status.label"): </span>@T("game.status.egg")</p>
         <p>@T("game.swan.summary")</p>
 
-        @if (Detailed)
-        {
-            <p class="free-note"><strong>@T("game.swan.free.title").</strong> @T("game.swan.free.text")</p>
+        <p class="free-note"><strong>@T("game.swan.free.title").</strong> @T("game.swan.free.text")</p>
 
-            <figure class="shot">
-                <img src="img/swanrace/swanrace-race.webp" alt="@T("game.swan.shot.race.alt")"
-                     width="1280" height="720" loading="lazy" decoding="async" />
-                <figcaption>@T("game.swan.shot.race.caption")</figcaption>
-            </figure>
+        <figure class="shot">
+            <img src="img/swanrace/swanrace-race.webp" alt="@T("game.swan.shot.race.alt")"
+                 width="1280" height="720" loading="lazy" decoding="async" />
+            <figcaption>@T("game.swan.shot.race.caption")</figcaption>
+        </figure>
 
-            <h3>@T("game.swan.ai.title")</h3>
-            <p>@T("game.swan.ai.text")</p>
+        <h3>@T("game.swan.ai.title")</h3>
+        <p>@T("game.swan.ai.text")</p>
 
-            <h3>@T("game.swan.custom.title")</h3>
-            <p>@T("game.swan.custom.text")</p>
-            <figure class="shot">
-                <img src="img/swanrace/swanrace-customize.webp" alt="@T("game.swan.shot.custom.alt")"
-                     width="1280" height="720" loading="lazy" decoding="async" />
-                <figcaption>@T("game.swan.shot.custom.caption")</figcaption>
-            </figure>
+        <h3>@T("game.swan.custom.title")</h3>
+        <p>@T("game.swan.custom.text")</p>
+        <figure class="shot">
+            <img src="img/swanrace/swanrace-customize.webp" alt="@T("game.swan.shot.custom.alt")"
+                 width="1280" height="720" loading="lazy" decoding="async" />
+            <figcaption>@T("game.swan.shot.custom.caption")</figcaption>
+        </figure>
 
-            <h3>@T("game.swan.features.title")</h3>
-            <ul class="pixel-list">
-                @foreach (var n in Enumerable.Range(1, 6))
-                {
-                    <li>@T($"game.swan.f{n}")</li>
-                }
-            </ul>
+        <h3>@T("game.swan.features.title")</h3>
+        <ul class="pixel-list">
+            @foreach (var n in Enumerable.Range(1, 6))
+            {
+                <li>@T($"game.swan.f{n}")</li>
+            }
+        </ul>
 
-            <figure class="shot">
-                <img src="img/swanrace/swanrace-title.webp" alt="@T("game.swan.shot.title.alt")"
-                     width="1280" height="720" loading="lazy" decoding="async" />
-                <figcaption>@T("game.swan.shot.title.caption")</figcaption>
-            </figure>
+        <figure class="shot">
+            <img src="img/swanrace/swanrace-title.webp" alt="@T("game.swan.shot.title.alt")"
+                 width="1280" height="720" loading="lazy" decoding="async" />
+            <figcaption>@T("game.swan.shot.title.caption")</figcaption>
+        </figure>
 
-            <h3 id="download">@T("game.swan.stores.title")</h3>
-            <p><a class="button" href="https://github.com/schlupfwerk/schlupfwerk_swanrace/releases/latest">@T("game.swan.download.cta")</a></p>
-            <p>@T("game.swan.download.note")</p>
-            @* Not links yet: the game isn't in any store. The official store badges replace these
-               once there is a page to link to (their brand rules ask for a working link). *@
-            <ul class="stores">
-                @foreach (var store in Stores)
-                {
-                    <li class="store">
-                        <span class="store-name">@store</span>
-                        <span class="store-soon">@T("game.swan.stores.soon")</span>
-                    </li>
-                }
-            </ul>
-            <p class="muted">@T("game.swan.stores.note")</p>
-            <p class="muted" id="code-signing"><strong>@T("game.swan.signing.title")</strong> @T("game.swan.signing.text")
-                (<a href="https://signpath.org">signpath.org</a>)</p>
+        <h3 id="download">@T("game.swan.stores.title")</h3>
+        <p><a class="button" href="https://github.com/schlupfwerk/schlupfwerk_swanrace/releases/latest">@T("game.swan.download.cta")</a></p>
+        <p>@T("game.swan.download.note")</p>
+        @* Not links yet: the game isn't in any store. The official store badges replace these
+           once there is a page to link to (their brand rules ask for a working link). *@
+        <ul class="stores">
+            @foreach (var store in Stores)
+            {
+                <li class="store">
+                    <span class="store-name">@store</span>
+                    <span class="store-soon">@T("game.swan.stores.soon")</span>
+                </li>
+            }
+        </ul>
+        <p class="muted">@T("game.swan.stores.note")</p>
+        <p class="muted" id="code-signing"><strong>@T("game.swan.signing.title")</strong> @T("game.swan.signing.text")
+            (<a href="https://signpath.org">signpath.org</a>)</p>
 
-            <a class="button button-ghost" href="https://github.com/schlupfwerk/schlupfwerk_swanrace">@T("game.swan.github")</a>
-        }
-        else
-        {
-            <a href="@PathOf(SitePage.Games)">@T("home.current.more")</a>
-        }
+        <a class="button button-ghost" href="https://github.com/schlupfwerk/schlupfwerk_swanrace">@T("game.swan.github")</a>
     </div>
 </article>
 
 @code {
     private static readonly string[] Stores = ["Google Play", "App Store", "Steam"];
-
-    /// <summary>True on the Games page (full details, screenshots, stores); false on the home page.</summary>
-    [Parameter]
-    public bool Detailed { get; set; }
 }

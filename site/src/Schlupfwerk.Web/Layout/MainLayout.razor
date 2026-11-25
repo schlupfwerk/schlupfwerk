@@ -53,11 +53,13 @@
     <div class="wrap footer-inner">
         <img src="img/logo-header-dark.svg" alt="Schlupfwerk" width="207" height="39" />
         <ul class="footer-links">
+            <li><a href="@SiteRoutes.PathOf(SitePage.Games, _lang)">@T("nav.games")</a></li>
+            <li><a href="@SiteRoutes.PathOf(SitePage.Privacy, _lang)">@T("nav.privacy")</a></li>
+            <li><a href="mailto:@T("site.email")">@T("site.email")</a></li>
             <li><a href="https://github.com/schlupfwerk">GitHub</a></li>
             <li><a href="https://ko-fi.com/schlupfwerk">Ko-fi</a></li>
-            <li><a href="mailto:@T("site.email")">@T("site.email")</a></li>
-            <li><a href="@SiteRoutes.PathOf(SitePage.Privacy, _lang)">@T("nav.privacy")</a></li>
         </ul>
+        <p class="footer-note">@T("footer.privacy")</p>
         <p class="copyright">© Schlupfwerk</p>
     </div>
 </footer>

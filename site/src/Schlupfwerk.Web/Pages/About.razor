@@ -42,6 +42,26 @@
     </div>
 </section>
 
+@* Code, art and brand each have their own terms (see the game's LICENSE, ASSETS_LICENSE.md and TRADEMARKS.md). *@
+<section class="section" aria-labelledby="licenses">
+    <div class="wrap narrow">
+        <h2 id="licenses">@T("about.licenses.title")</h2>
+        <p>@T("about.licenses.intro")</p>
+        <ul class="pixel-list">
+            @foreach (var (key, file) in Licenses)
+            {
+                <li>
+                    <strong>@T($"about.licenses.{key}.title")</strong> @T($"about.licenses.{key}.text")
+                    <a href="@($"{GameRepo}/blob/main/{file}")">@file</a>
+                </li>
+            }
+        </ul>
+        <p>@T("about.licenses.outro")</p>
+    </div>
+</section>
+
+<div class="crack" aria-hidden="true"></div>
+
 <section class="section" aria-labelledby="join">
     <div class="wrap narrow">
         <h2 id="join">@T("about.join.title")</h2>
@@ -52,4 +72,13 @@
 
 @code {
     private static readonly string[] Values = ["family", "noads", "fair", "offline", "open", "light"];
+
+    private const string GameRepo = "https://github.com/schlupfwerk/schlupfwerk_swanrace";
+
+    private static readonly (string Key, string File)[] Licenses =
+    [
+        ("code", "LICENSE"),
+        ("assets", "ASSETS_LICENSE.md"),
+        ("brand", "TRADEMARKS.md"),
+    ];
 }

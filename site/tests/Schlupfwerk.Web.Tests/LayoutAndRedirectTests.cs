@@ -43,6 +43,19 @@ public sealed class LayoutAndRedirectTests : BunitContext
     }
 
     [Theory]
+    [InlineData("/pt", "/pt/jogos", "/pt/privacidade")]
+    [InlineData("/en", "/en/games", "/en/privacy")]
+    public void Footer_LinksGamesAndPrivacy_AndSaysNoTracking(string path, string games, string privacy)
+    {
+        var cut = RenderLayoutAt(path);
+
+        var links = cut.FindAll(".footer-links a").Select(a => a.GetAttribute("href")).ToList();
+        Assert.Contains(games, links);
+        Assert.Contains(privacy, links);
+        Assert.False(string.IsNullOrWhiteSpace(cut.Find(".footer-note").TextContent));
+    }
+
+    [Theory]
     [InlineData("/pt/jogos", "/pt/cafe", "Pague um café")]
     [InlineData("/en/about", "/en/cafe", "Buy us a coffee")]
     public void Header_HasTheCoffeeButton_ToTheCafePageInTheSameLanguage(string path, string cafe, string label)
