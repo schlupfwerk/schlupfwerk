@@ -61,7 +61,6 @@
 
   "game.status.label": "Status",
   "game.status.egg": "🐣 Alpha 0.0.5: já dá para jogar no Windows",
-  "game.swan.working": "nome provisório",
   "game.swan.summary": "Uma corrida 3D para toda a família com um cisne que não sabe voar nem nadar e corre todo desengonçado, quase um pato, contra outros cisnes numa ilha deserta: rampas, pontes sobre um lago, troncos para pular e aceleradores na areia.",
   "game.swan.free.title": "Totalmente grátis",
   "game.swan.free.text": "Sem anúncios, sem compras e sem nada para desbloquear pagando. Todo mundo corre com as mesmas chances.",
@@ -85,7 +84,11 @@
   "game.swan.shot.title.caption": "A abertura: o cisne sai do ovo.",
   "game.swan.stores.title": "Onde baixar",
   "game.swan.stores.soon": "em breve",
-  "game.swan.stores.note": "Por enquanto a alpha roda no Windows. Os links das lojas entram aqui quando o jogo for publicado.",
+  "game.swan.stores.note": "Nas lojas, o jogo chega depois.",
+  "game.swan.download.cta": "Baixar a alpha para Windows",
+  "game.swan.download.note": "Grátis e sem instalar: extraia o .zip e abra o SwanRace.exe. Se o Windows mostrar \"O Windows protegeu o computador\", clique em \"Mais informações\" e depois em \"Executar assim mesmo\".",
+  "game.swan.signing.title": "Assinatura de código:",
+  "game.swan.signing.text": "assinatura de código gratuita fornecida pela SignPath.io, com certificado da SignPath Foundation. A assinatura começa quando o projeto for aprovado; até lá, os builds para Windows ainda não são assinados.",
   "game.swan.github": "Acompanhe no GitHub",
 
   "cafe.seo.title": "Pague um cafezinho",

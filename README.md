@@ -48,7 +48,7 @@ and make them go fast.
 
 | Project | What it is | Status |
 |---|---|---|
-| [**Swan Race**](https://github.com/schlupfwerk/schlupfwerk_swanrace) *(working title)* | A free 3D racing game for the whole family: a clumsy swan races up to 11 AI swans on a desert island, with ramps, bridges and a big wardrobe | 🐣 Alpha 0.0.5, playable on Windows |
+| [**Swan Race**](https://github.com/schlupfwerk/schlupfwerk_swanrace) | A free 3D racing game for the whole family: a clumsy swan races up to 11 AI swans on a desert island, with ramps, bridges and a big wardrobe | 🐣 Alpha 0.0.5, playable on Windows |
 | [schlupfwerk.com](https://schlupfwerk.com) | Our website, built with .NET 10 and Blazor | 🛠️ Coming soon |
 
 ## 🤝 Contribute
