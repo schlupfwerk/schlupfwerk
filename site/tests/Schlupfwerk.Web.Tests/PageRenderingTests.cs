@@ -71,6 +71,24 @@ public sealed class PageRenderingTests : BunitContext
     }
 
     [Theory]
+    [InlineData(Lang.Pt)]
+    [InlineData(Lang.En)]
+    public void Games_DownloadSection_LinksTheLatestRelease_AndCreditsSignPath(Lang lang)
+    {
+        var cut = Render<Games>(p => p.AddCascadingValue(lang));
+
+        // SignPath Foundation asks the download page to say that it signs the builds.
+        Assert.NotNull(cut.Find("#download"));
+        Assert.Contains(cut.FindAll("a.button"),
+            a => a.GetAttribute("href") == "https://github.com/schlupfwerk/schlupfwerk_swanrace/releases/latest");
+        var signing = cut.Find("#code-signing").TextContent;
+        Assert.Contains("SignPath.io", signing, StringComparison.Ordinal);
+        Assert.Contains("SignPath Foundation", signing, StringComparison.Ordinal);
+        // Swan Race is the official name now: no "working title" tag.
+        Assert.Empty(cut.FindAll(".tag"));
+    }
+
+    [Theory]
     [InlineData(Lang.Pt, "pix")]
     [InlineData(Lang.En, "kofi")]
     public void Cafe_ShowsTheVisitorsUsualOptionFirst(Lang lang, string first)

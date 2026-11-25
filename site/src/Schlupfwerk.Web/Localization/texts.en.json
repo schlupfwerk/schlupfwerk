@@ -61,7 +61,6 @@
 
   "game.status.label": "Status",
   "game.status.egg": "🐣 Alpha 0.0.5: playable on Windows",
-  "game.swan.working": "working title",
   "game.swan.summary": "A 3D racing game for the whole family, starring a swan that can neither fly nor swim and runs all clumsy, almost like a duck, against other swans on a desert island: ramps, bridges over a lake, logs to jump and speed pads on the sand.",
   "game.swan.free.title": "Completely free",
   "game.swan.free.text": "No ads, no purchases and nothing to unlock by paying. Everyone races with the same chances.",
@@ -85,7 +84,11 @@
   "game.swan.shot.title.caption": "The opening: the swan hatches.",
   "game.swan.stores.title": "Where to get it",
   "game.swan.stores.soon": "coming soon",
-  "game.swan.stores.note": "For now the alpha runs on Windows. The store links will be added here once the game is published.",
+  "game.swan.stores.note": "The game comes to the stores later.",
+  "game.swan.download.cta": "Download the alpha for Windows",
+  "game.swan.download.note": "Free, no installation: unzip it and open SwanRace.exe. If Windows shows \"Windows protected your PC\", click \"More info\" and then \"Run anyway\".",
+  "game.swan.signing.title": "Code signing:",
+  "game.swan.signing.text": "free code signing provided by SignPath.io, certificate by SignPath Foundation. Signing starts once the project is approved; until then the Windows builds are not signed.",
   "game.swan.github": "Follow it on GitHub",
 
   "cafe.seo.title": "Buy us a coffee",

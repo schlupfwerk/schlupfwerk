@@ -114,12 +114,16 @@ Detalhes que já deram problema:
    - offline primeiro, com recursos online opcionais
    - código aberto (GPLv3) e aberto a colaboração no GitHub
    - jogos leves, que rodam bem em celulares comuns
-3. **Jogos**: por enquanto, o **Swan Race** (nome provisório). Mostra o status com a **versão atual**
+3. **Jogos**: por enquanto, o **Swan Race** (nome oficial; sem "nome provisório"). Mostra o status com a **versão atual**
    (hoje "🐣 Alpha 0.0.5: já dá para jogar no Windows"; atualize a cada versão nova do jogo), o resumo,
    o destaque **"Totalmente grátis"** (sem anúncios, sem compras, nada para desbloquear pagando), a
    seção **Adversários com IA** (até 11 bots com habilidade sorteada pela dificuldade, mesmas regras e
    física do jogador), **Monte o seu cisne** (personalização), a lista do que já tem no jogo, três
-   **capturas** (`wwwroot/img/swanrace/*.webp`, 1280×720, geradas no próprio jogo) e **Onde baixar**:
+   **capturas** (`wwwroot/img/swanrace/*.webp`, 1280×720, geradas no próprio jogo) e **Onde baixar**
+   (âncora `#download`): botão **"Baixar a alpha para Windows"** para
+   github.com/schlupfwerk/schlupfwerk_swanrace/releases/latest, com o passo a passo do SmartScreen, e
+   a nota de **assinatura de código** exigida pela SignPath Foundation ("Free code signing provided by
+   SignPath.io, certificate by SignPath Foundation"; não remova enquanto usarmos a SignPath).
    Google Play, App Store e Steam como botões tracejados "em breve", **sem logo oficial e sem link**
    até o jogo estar publicado (as regras de marca da Apple e do Google pedem um link que funcione;
    aí entram os selos oficiais). Link do código: github.com/schlupfwerk/schlupfwerk_swanrace.
