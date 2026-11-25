@@ -122,7 +122,7 @@ Detalhes que já deram problema:
      logos fora das licenças (links para LICENSE, ASSETS_LICENSE.md e TRADEMARKS.md do jogo)
    - jogos leves, que rodam bem em celulares comuns
 3. **Jogos**: por enquanto, o **Swan Race** (nome oficial; sem "nome provisório"). Mostra o status com a **versão atual**
-   (hoje "🐣 Alpha 0.0.5: já dá para jogar no Windows"; atualize a cada versão nova do jogo), o resumo,
+   (hoje "🐣 Alpha 0.0.6: já dá para jogar no Windows"; atualize a cada versão nova do jogo), o resumo,
    o destaque **"Totalmente grátis"** (sem anúncios, sem compras, nada para desbloquear pagando), a
    seção **Adversários com IA** (até 11 bots com habilidade sorteada pela dificuldade, mesmas regras e
    física do jogador), **Monte o seu cisne** (personalização), a lista do que já tem no jogo, três
