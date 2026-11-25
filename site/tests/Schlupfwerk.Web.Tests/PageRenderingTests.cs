@@ -59,6 +59,39 @@ public sealed class PageRenderingTests : BunitContext
     [Theory]
     [InlineData(Lang.Pt)]
     [InlineData(Lang.En)]
+    public void About_ExplainsTheLicenseOfCodeArtAndBrand(Lang lang)
+    {
+        var cut = Render<About>(p => p.AddCascadingValue(lang));
+
+        // Code is GPL, art is CC BY-NC-SA, names and logos are neither: each links its file.
+        var links = cut.FindAll("#licenses ~ ul a").Select(a => a.GetAttribute("href")).ToList();
+        Assert.Equal(
+            ["LICENSE", "ASSETS_LICENSE.md", "TRADEMARKS.md"],
+            links.Select(href => href!.Split('/')[^1]));
+        Assert.All(links, href => Assert.StartsWith("https://github.com/schlupfwerk/schlupfwerk_swanrace/blob/main/", href, StringComparison.Ordinal));
+    }
+
+    [Theory]
+    [InlineData(Lang.Pt, "/pt/jogos", "/pt/cafe")]
+    [InlineData(Lang.En, "/en/games", "/en/cafe")]
+    public void Home_HasTheGameUpFront_FourDifferences_TheNest_AndTheTrustStrip(Lang lang, string games, string cafe)
+    {
+        var cut = Render<Home>(p => p.AddCascadingValue(lang));
+
+        var hero = cut.Find(".hero");
+        Assert.False(string.IsNullOrWhiteSpace(hero.QuerySelector("img.hero-shot")?.GetAttribute("alt")));
+        var actions = hero.QuerySelectorAll(".actions a").Select(a => a.GetAttribute("href")).ToList();
+        Assert.Equal([$"{games}#download", cafe], actions);
+
+        Assert.Equal(4, cut.FindAll("#highlights ~ .cards > li").Count);
+        Assert.Equal(3, cut.FindAll(".nest li").Count);
+        Assert.False(string.IsNullOrWhiteSpace(cut.Find(".nest img").GetAttribute("alt")));
+        Assert.Equal(5, cut.FindAll(".trust li").Count);
+    }
+
+    [Theory]
+    [InlineData(Lang.Pt)]
+    [InlineData(Lang.En)]
     public void Games_ShowsScreenshotsWithAltText_TheStores_AndTheGameRepo(Lang lang)
     {
         var cut = Render<Games>(p => p.AddCascadingValue(lang));

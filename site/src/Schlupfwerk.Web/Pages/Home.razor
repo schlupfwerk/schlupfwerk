@@ -4,20 +4,23 @@
 
 <Seo Page="SitePage.Home" Title="@T("home.seo.title")" />
 
+@* 1. Hero: the studio line, the game right away, play or support. *@
 <section class="hero">
     <div class="wrap hero-inner">
-        <img class="hero-egg" src="img/egg.svg" alt="" width="100" height="130" />
         <h1>@T("site.tagline")</h1>
-        <p class="lead">@T("site.intro")</p>
+        <p class="lead">@T("home.hero.subtitle")</p>
+        <img class="hero-shot" src="img/swanrace/swanrace-title.webp" alt="@T("home.hero.alt")"
+             width="1280" height="720" fetchpriority="high" decoding="async" />
         <div class="actions">
-            <a class="button" href="@PathOf(SitePage.Games)">@T("home.cta.games")</a>
-            <a class="button button-ghost" href="@PathOf(SitePage.About)">@T("home.cta.about")</a>
+            <a class="button" href="@($"{PathOf(SitePage.Games)}#download")">@T("home.cta.play")</a>
+            <a class="button button-ghost" href="@PathOf(SitePage.Cafe)">@T("home.cafe.cta") ☕</a>
         </div>
     </div>
 </section>
 
 <div class="crack" aria-hidden="true"></div>
 
+@* 2. Four things that set our games apart. *@
 <section class="section section-shell" aria-labelledby="highlights">
     <div class="wrap">
         <h2 id="highlights">@T("home.highlights.title")</h2>
@@ -25,8 +28,8 @@
             @foreach (var key in Highlights)
             {
                 <li class="card">
-                    <h3>@T($"value.{key}.title")</h3>
-                    <p>@T($"value.{key}.text")</p>
+                    <h3>@T($"home.diff.{key}.title")</h3>
+                    <p>@T($"home.diff.{key}.text")</p>
                 </li>
             }
         </ul>
@@ -34,13 +37,39 @@
     </div>
 </section>
 
+@* 3. Now in the nest: the game in two columns. *@
 <section class="section" aria-labelledby="current">
     <div class="wrap">
         <h2 id="current">@T("home.current.title")</h2>
-        <SwanRaceCard />
+        <div class="nest">
+            <img src="img/swanrace/swanrace-customize.webp" alt="@T("home.current.alt")"
+                 width="1280" height="720" loading="lazy" decoding="async" />
+            <div>
+                <h3>Swan Race</h3>
+                <p class="status"><span class="visually-hidden">@T("game.status.label"): </span>@T("game.status.egg")</p>
+                <ul class="pixel-list">
+                    @foreach (var n in Enumerable.Range(1, 3))
+                    {
+                        <li>@T($"home.current.b{n}")</li>
+                    }
+                </ul>
+                <a class="button" href="@PathOf(SitePage.Games)">@T("home.current.cta")</a>
+            </div>
+        </div>
     </div>
 </section>
 
+@* 4. Trust strip. *@
+<div class="trust" role="note" aria-label="@T("home.trust.label")">
+    <ul class="wrap">
+        @foreach (var n in Enumerable.Range(1, 5))
+        {
+            <li>@T($"home.trust.{n}")</li>
+        }
+    </ul>
+</div>
+
+@* 5. Support us. The coffee page has Pix and Ko-fi. *@
 <section class="section section-shell" aria-labelledby="coffee">
     <div class="wrap narrow center">
         <h2 id="coffee">@T("cafe.title")</h2>
@@ -50,5 +79,5 @@
 </section>
 
 @code {
-    private static readonly string[] Highlights = ["family", "noads", "fair", "offline"];
+    private static readonly string[] Highlights = ["family", "free", "notracking", "open"];
 }

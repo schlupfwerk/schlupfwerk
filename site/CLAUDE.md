@@ -104,15 +104,22 @@ Detalhes que já deram problema:
   disponível
 
 ## Páginas (primeira versão)
-1. **Início**: o logo, a frase "Independent games, hatched with care. 🥚"
-   (em PT: "Jogos independentes, chocados com carinho."), os destaques e o jogo atual.
+1. **Início**, em 5 blocos mais o rodapé: **hero** (a frase "Jogos independentes, chocados com carinho.",
+   uma linha sobre o Swan Race, a tela de título do jogo e os botões "Jogue o Swan Race (grátis)" →
+   `#download` da página de jogos e "Pague um cafezinho"), **quatro diferenciais** (família, grátis de
+   verdade, sem rastreamento, código aberto; chaves `home.diff.*`, separadas dos valores do Sobre),
+   **Agora no ninho** em duas colunas (imagem da personalização, status, 3 itens, link para o jogo),
+   **faixa de confiança** (sem anúncios, sem compras, sem rastreamento, GPLv3, feito no Brasil) e o
+   **café**. Rodapé: Jogos, Privacidade, e-mail, GitHub, Ko-fi, aviso curto de privacidade e ©.
 2. **Sobre / Manifesto**: quem somos e os valores:
    - para toda a família
    - sem anúncios e sem rastreamento (não diga "sem coleta de dados": os recursos
      online usam dados, que ficam com a Apple e o Google, não com o estúdio)
    - jogo justo: nada que dê vantagem está à venda; o Swan Race é totalmente gratuito, sem compras
    - offline primeiro, com recursos online opcionais
-   - código aberto (GPLv3) e aberto a colaboração no GitHub
+   - código aberto (GPLv3) e aberto a colaboração no GitHub; a arte é CC BY-NC-SA 4.0
+   - seção **Código aberto e Creative Commons**: código GPLv3, arte e sons CC BY-NC-SA 4.0, nomes e
+     logos fora das licenças (links para LICENSE, ASSETS_LICENSE.md e TRADEMARKS.md do jogo)
    - jogos leves, que rodam bem em celulares comuns
 3. **Jogos**: por enquanto, o **Swan Race** (nome oficial; sem "nome provisório"). Mostra o status com a **versão atual**
    (hoje "🐣 Alpha 0.0.5: já dá para jogar no Windows"; atualize a cada versão nova do jogo), o resumo,
