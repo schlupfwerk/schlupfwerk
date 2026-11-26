@@ -139,6 +139,8 @@
   "privacy.site.storage": "Se você escolhe um idioma, essa escolha fica guardada só no seu navegador (localStorage), para o site abrir no idioma certo da próxima vez. Ela não é enviada para nós.",
   "privacy.games.title": "Nossos jogos",
   "privacy.games.text": "Os jogos funcionam sem internet e sem criar conta, e não enviam seus dados pessoais para o estúdio. Os recursos online são opcionais e usam serviços da Apple e do Google, descritos abaixo. Se algum recurso novo precisar de outros dados, esta página vai explicar quais antes de ele existir.",
+  "privacy.crashes.title": "Falhas e correção de bugs",
+  "privacy.crashes.text": "Os jogos não têm ferramenta de analytics nem de relatório de falhas, e não usam a internet para isso. Se você permitiu que seu celular Android compartilhe dados de uso e diagnóstico com o Google, o próprio Android avisa o Google quando um jogo fecha sozinho ou trava. O Google Play nos mostra só estatísticas agregadas dessas falhas (por exemplo, o modelo do aparelho e a versão do Android), sem identificar ninguém. Usamos essas estatísticas apenas para analisar bugs e corrigi-los depois. Não coletamos dados pessoais e não identificamos ninguém. Você pode desligar esse compartilhamento nas configurações do Google do seu celular, em Uso e diagnóstico.",
   "privacy.scores.title": "Placares, conquistas e progresso",
   "privacy.scores.text": "Placares (inclusive o placar entre amigos), conquistas e o progresso salvo na nuvem são opcionais e usam o Game Center e o iCloud (iOS) ou o Google Play Games (Android). Esses serviços guardam seu apelido, sua lista de amigos, sua pontuação e seu progresso sob as políticas de privacidade da Apple e do Google.",
   "privacy.purchases.title": "Compras",

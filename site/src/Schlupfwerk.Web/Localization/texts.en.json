@@ -139,6 +139,8 @@
   "privacy.site.storage": "If you pick a language, that choice is saved only in your browser (localStorage), so the site opens in the right language next time. It is never sent to us.",
   "privacy.games.title": "Our games",
   "privacy.games.text": "Our games work without internet and without an account, and they don't send your personal data to the studio. Online features are optional and use Apple and Google services, described below. If a new feature ever needs other data, this page will explain which data before that feature exists.",
+  "privacy.crashes.title": "Crashes and bug fixes",
+  "privacy.crashes.text": "Our games have no analytics or crash reporting tool, and they don't use the internet for that. If you allowed your Android phone to share usage and diagnostics data with Google, Android itself tells Google when a game closes on its own or freezes. Google Play shows us only aggregated statistics about those crashes (for example, the phone model and Android version), without identifying anyone. We use those statistics only to analyze bugs and fix them later. We don't collect personal data and we don't identify anyone. You can turn this sharing off in your phone's Google settings, under Usage & diagnostics.",
   "privacy.scores.title": "Leaderboards, achievements and progress",
   "privacy.scores.text": "Leaderboards (including friends-only leaderboards), achievements and cloud-saved progress are optional and use Game Center and iCloud (iOS) or Google Play Games (Android). Those services store your nickname, your friends list, your score and your progress under Apple's and Google's privacy policies.",
   "privacy.purchases.title": "Purchases",
