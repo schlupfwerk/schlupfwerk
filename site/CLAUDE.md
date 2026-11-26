@@ -4,7 +4,9 @@ Contexto do projeto para o Claude Code. Leia antes de qualquer tarefa.
 
 ## O que é
 Site institucional da **Schlupfwerk**, um estúdio de jogos indie, independente e
-brasileiro, que faz jogos **para toda a família** para Android e iOS. O site
+brasileiro, que faz jogos para Android, iOS e PC: jogos **grátis, para toda a família e de código
+aberto** (como o Swan Race) e jogos **pagos, de código fechado**, que podem ter ação e violência
+para quem é mais velho (nunca conteúdo sexual). Veja a ADR 0010. O site
 apresenta o estúdio, os valores, os jogos e recebe apoio ("cafezinho").
 
 - Dono e único mantenedor: Manuel Bravo (GitHub: @Bravodin)
@@ -107,17 +109,21 @@ Detalhes que já deram problema:
 1. **Início**, em 5 blocos mais o rodapé: **hero** (a frase "Jogos independentes, chocados com carinho.",
    uma linha sobre o Swan Race, a tela de título do jogo e os botões "Jogue o Swan Race (grátis)" →
    `#download` da página de jogos e "Pague um cafezinho"), **quatro diferenciais** (família, grátis de
-   verdade, sem rastreamento, código aberto; chaves `home.diff.*`, separadas dos valores do Sobre),
+   verdade, sem venda de dados, código aberto; falam dos jogos grátis; chaves `home.diff.*`, separadas dos valores do Sobre),
    **Agora no ninho** em duas colunas (imagem da personalização, status, 3 itens, link para o jogo),
-   **faixa de confiança** (sem anúncios, sem compras, sem rastreamento, GPLv3, feito no Brasil) e o
+   **faixa de confiança** (sem anúncios, jogos grátis sem compras, sem venda de dados, jogos grátis em código aberto, feito no Brasil) e o
    **café**. Rodapé: Jogos, Privacidade, e-mail, GitHub, Ko-fi, aviso curto de privacidade e ©.
 2. **Sobre / Manifesto**: quem somos e os valores:
-   - para toda a família
-   - sem anúncios e sem rastreamento (não diga "sem coleta de dados": os recursos
-     online usam dados, que ficam com a Apple e o Google, não com o estúdio)
-   - jogo justo: nada que dê vantagem está à venda; o Swan Race é totalmente gratuito, sem compras
+   - jogos para cada idade: os grátis são para toda a família; os pagos podem ser para quem é mais
+     velho, com a classificação indicativa da loja e nunca com conteúdo sexual
+   - sem anúncios e sem venda de dados (não diga "sem rastreamento", "sem analytics" nem "sem coleta
+     de dados": os jogos usam o Google Analytics, de forma anônima, e os recursos online usam dados
+     que ficam com a Apple e o Google)
+   - jogo justo: nada que dê vantagem está à venda; os jogos grátis, como o Swan Race, não têm compras;
+     os pagos são vendidos nas lojas
    - offline primeiro, com recursos online opcionais
-   - código aberto (GPLv3) e aberto a colaboração no GitHub; a arte é CC BY-NC-SA 4.0
+   - código aberto (GPLv3) nos jogos grátis, aberto a colaboração no GitHub; a arte é CC BY-NC-SA 4.0;
+     os jogos pagos têm código fechado
    - seção **Código aberto e Creative Commons**: código GPLv3, arte e sons CC BY-NC-SA 4.0, nomes e
      logos fora das licenças (links para LICENSE, ASSETS_LICENSE.md e TRADEMARKS.md do jogo)
    - jogos leves, que rodam bem em celulares comuns
@@ -155,7 +161,8 @@ Detalhes que já deram problema:
    - O CNPJ **não** está cadastrado como chave Pix; não use.
 5. **Privacidade**: política simples e honesta, exigida pelas lojas:
    - o site não usa cookies de rastreamento nem analytics
-   - os jogos não enviam dados pessoais ao estúdio, nem exigem conta
+   - os jogos não exigem conta; usam só o Google Analytics, anônimo (sem nome, e-mail, contatos,
+     localização precisa nem ID de publicidade), para erros e melhorias, e só com internet
    - placares (inclusive entre amigos), conquistas e progresso na nuvem são opcionais
      e usam o Game Center e o iCloud (iOS) ou o Google Play Games (Android), que guardam
      apelido, amigos, pontuação e progresso sob as políticas da Apple e do Google
@@ -202,6 +209,6 @@ Os arquivos do logo estão no pacote `schlupfwerk-logo` (pastas `site/`,
 ## Regras
 - Não invente números, depoimentos, datas de lançamento ou parceiros. O que
   não se sabe ainda fica como `[A DEFINIR]`.
-- Nada de analytics, pixels de rastreamento ou scripts de terceiros além do
-  necessário.
+- No site, nada de analytics, pixels de rastreamento ou scripts de terceiros além do
+  necessário. Nos jogos, só o Google Analytics anônimo (ADR 0010).
 - Comentários de código em inglês; textos do site em PT e EN.

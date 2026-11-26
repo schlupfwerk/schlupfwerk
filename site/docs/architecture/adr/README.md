@@ -11,9 +11,10 @@ Each record says what was decided, why, what else was considered and what it cos
 | [0004](0004-domains-and-dns.md) | `schlupfwerk.com` as the only address, DNS on Cloudflare | Accepted |
 | [0005](0005-bilingual-routes-and-language-choice.md) | Two languages with translated paths, chosen in the browser | Accepted |
 | [0006](0006-strict-csp-with-hashed-import-map.md) | A strict CSP, with the import map allowed by hash | Accepted |
-| [0007](0007-privacy-no-tracking.md) | No tracking, no cookies, no cookie banner | Accepted |
+| [0007](0007-privacy-no-tracking.md) | No tracking, no cookies, no cookie banner | Accepted, partly superseded by 0010 |
 | [0008](0008-pix-static-qr-code.md) | Donations: Ko-fi and a static Pix QR code | Accepted |
 | [0009](0009-real-404-for-unknown-paths.md) | A real 404 status for unknown paths | Proposed |
+| [0010](0010-free-and-paid-games-and-google-analytics.md) | Free and paid games, and Google Analytics in the games | Accepted |
 
 ## Writing a new one
 

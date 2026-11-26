@@ -1,6 +1,6 @@
 # 0007 — No tracking, no cookies, no cookie banner
 
-- Status: Accepted
+- Status: Accepted, partly superseded by [0010](0010-free-and-paid-games-and-google-analytics.md) (the games now use Google Analytics; the site is unchanged)
 - Date: 2026-11-23
 
 ## Context
