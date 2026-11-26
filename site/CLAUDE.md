@@ -128,19 +128,22 @@ Detalhes que já deram problema:
      logos fora das licenças (links para LICENSE, ASSETS_LICENSE.md e TRADEMARKS.md do jogo)
    - jogos leves, que rodam bem em celulares comuns
 3. **Jogos**: por enquanto, o **Swan Race** (nome oficial; sem "nome provisório"). Mostra o status com a **versão atual**
-   (hoje "🐣 Alpha 0.0.8: já dá para jogar no Windows; Android em testes"; atualize a cada versão nova do jogo), o resumo,
+   (hoje "🐣 Versão 1.0.0: já dá para jogar no Windows. Ainda estamos testando as primeiras versões;
+   Android em testes"; atualize a cada versão nova do jogo), o resumo,
    o destaque **"Totalmente grátis"** (sem anúncios, sem compras, nada para desbloquear pagando), a
    seção **Adversários com IA** (até 11 bots com habilidade sorteada pela dificuldade, mesmas regras e
    física do jogador), **Monte o seu cisne** (personalização), a lista do que já tem no jogo, três
    **capturas** (`wwwroot/img/swanrace/*.webp`, 1280×720, geradas no próprio jogo) e **Onde baixar**
-   (âncora `#download`): botão **"Baixar a alpha para Windows"** para
+   (âncora `#download`): botão **"Baixar para Windows"** para
    github.com/schlupfwerk/schlupfwerk_swanrace/releases/latest, com o passo a passo do SmartScreen, e
    a nota de **assinatura de código** exigida pela SignPath Foundation ("Free code signing provided by
    SignPath.io, certificate by SignPath Foundation"; não remova enquanto usarmos a SignPath).
    Google Play, App Store e Steam como botões tracejados "em breve", **sem logo oficial e sem link**
    até o jogo estar publicado (as regras de marca da Apple e do Google pedem um link que funcione;
    aí entram os selos oficiais). Link do código: github.com/schlupfwerk/schlupfwerk_swanrace.
-   Hoje o jogo tem uma pista (Ilha Deserta); o plano antigo de Suíça, Alemanha e Rio continua no
+   Desde a 1.0.0 o jogo tem nove pistas (Ilha Deserta, Alpes Suíços, Orla do Rio, Circuito Sideral,
+   São Paulo, Floresta Alemã, Tóquio, Muralha da China e Cordilheira dos Andes), cada uma com a sua
+   música; os detalhes ficam no
    repositório do jogo. Sem servidor do estúdio: placar entre amigos pelo Game Center / Play Games;
    convite por link (WhatsApp). Multiplayer e indicação com recompensa ficam para a 2.0. Não ler a
    agenda de contatos.
