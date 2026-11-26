@@ -134,15 +134,17 @@ Detalhes que já deram problema:
    seção **Adversários com IA** (até 11 bots com habilidade sorteada pela dificuldade, mesmas regras e
    física do jogador), **Monte o seu cisne** (personalização), a lista do que já tem no jogo, três
    **capturas** (`wwwroot/img/swanrace/*.webp`, 1280×720, geradas no próprio jogo) e **Onde baixar**
-   (âncora `#download`): botão **"Baixar para Windows"** para
-   github.com/schlupfwerk/schlupfwerk_swanrace/releases/latest, com o passo a passo do SmartScreen, e
+   (âncora `#download`): botão **"Baixar o Swan Race 1.0.0 para Windows"**, link direto para o zip do
+   lançamento (`github.com/schlupfwerk/schlupfwerk_swanrace/releases/download/v<versão>/SwanRace-<versão>-windows.zip`;
+   atualize versão, texto e teste a cada lançamento), com o passo a passo do SmartScreen, e
    a nota de **assinatura de código** exigida pela SignPath Foundation ("Free code signing provided by
    SignPath.io, certificate by SignPath Foundation"; não remova enquanto usarmos a SignPath).
    Google Play, App Store e Steam como botões tracejados "em breve", **sem logo oficial e sem link**
    até o jogo estar publicado (as regras de marca da Apple e do Google pedem um link que funcione;
    aí entram os selos oficiais). Link do código: github.com/schlupfwerk/schlupfwerk_swanrace.
-   Desde a 1.0.0 o jogo tem nove pistas (Ilha Deserta, Alpes Suíços, Orla do Rio, Circuito Sideral,
-   São Paulo, Floresta Alemã, Tóquio, Muralha da China e Cordilheira dos Andes), cada uma com a sua
+   Desde a 1.0.0 o jogo tem doze pistas (Ilha Deserta, Alpes Suíços, Orla do Rio, Circuito Sideral,
+   São Paulo, Floresta Alemã, Tóquio, Muralha da China, Cordilheira dos Andes, Egito, Coliseu de Roma
+   e Paris), cada uma com a sua
    música; os detalhes ficam no
    repositório do jogo. Sem servidor do estúdio: placar entre amigos pelo Game Center / Play Games;
    convite por link (WhatsApp). Multiplayer e indicação com recompensa ficam para a 2.0. Não ler a

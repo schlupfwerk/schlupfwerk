@@ -113,7 +113,7 @@ public sealed class PageRenderingTests : BunitContext
         // SignPath Foundation asks the download page to say that it signs the builds.
         Assert.NotNull(cut.Find("#download"));
         Assert.Contains(cut.FindAll("a.button"),
-            a => a.GetAttribute("href") == "https://github.com/schlupfwerk/schlupfwerk_swanrace/releases/latest");
+            a => a.GetAttribute("href") == "https://github.com/schlupfwerk/schlupfwerk_swanrace/releases/download/v1.0.0/SwanRace-1.0.0-windows.zip");
         var signing = cut.Find("#code-signing").TextContent;
         Assert.Contains("SignPath.io", signing, StringComparison.Ordinal);
         Assert.Contains("SignPath Foundation", signing, StringComparison.Ordinal);
