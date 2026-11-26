@@ -13,7 +13,7 @@
 
 <p align="center">
   <b>Independent games, hatched with care. 🥚</b><br>
-  Family-friendly indie games for Android and iOS, made in Brazil and open to everyone.
+  Indie games for Android, iOS and PC, from family-friendly to action-packed, made in Brazil.
 </p>
 
 <p align="center">
@@ -27,8 +27,11 @@
 ## 🐣 Who we are
 
 **Schlupfwerk** is an independent game studio. No investors, no publisher, no
-pressure to squeeze players: just games we would love to play with our own
-family.
+pressure to squeeze players: just games we would love to play.
+
+Our free games are made for the whole family. We also make paid games for older
+players, with action and challenge: metroidvanias, platformers, shooting and
+combat, in the spirit of Castlevania and Blasphemous. Never with sexual content.
 
 The name is German. *Schlupf* means both the moment a chick **hatches** and the
 **slip** of a wheel drifting through a curve. That is what we do: we hatch ideas
@@ -36,12 +39,16 @@ and make them go fast.
 
 ## 🎮 What we believe in
 
-- **Family friendly**: games kids can play and parents can trust.
-- **No ads, no tracking**: no analytics, no selling data. Your time and your privacy are not our product.
-- **Fair play**: nothing that gives an advantage is for sale. Swan Race is completely free, with no purchases.
+- **Games for every age**: our free games are family friendly, games kids can play
+  and parents can trust. Games for older players show their age rating in the store.
+- **No ads, no selling data**: in our games we only use Google Analytics, anonymously,
+  to find errors. Your time and your privacy are not our product.
+- **Fair play**: nothing that gives an advantage is for sale. Free games, like Swan
+  Race, are truly free, with no purchases. Paid games are sold in the stores, like
+  Steam, at a fair price.
 - **Offline first**: our games work without internet. Online features are optional.
-- **Open source**: our games' code is free software (GPLv3). Read it, learn from
-  it, improve it.
+- **Open source free games**: the code of our free games is free software (GPLv3).
+  Read it, learn from it, improve it. Our paid games are closed source.
 - **Light and installable**: small downloads that run well on ordinary phones.
 
 ## 🦢 Projects
@@ -79,19 +86,24 @@ In Brazil? You can also use **Pix**: scan the QR code inside the
 
 <br>
 
-**Schlupfwerk** é um estúdio de jogos independente, brasileiro, que faz jogos
-indie **para toda a família**, para Android e iOS.
+**Schlupfwerk** é um estúdio de jogos independente e brasileiro, que faz jogos
+indie para Android, iOS e PC: dos jogos grátis **para toda a família** aos jogos
+pagos para quem é mais velho, com ação e desafio (metroidvanias, plataforma, tiro
+e combate). Nunca com conteúdo sexual.
 
 O nome vem do alemão: *Schlupf* é tanto o momento em que o pintinho **sai do
 ovo** quanto a **derrapagem** de uma roda numa curva. É o que fazemos: chocamos
 ideias e colocamos elas para correr.
 
 **No que acreditamos**
-- **Para toda a família**: jogos que crianças podem jogar e pais podem confiar.
-- **Sem anúncios e sem rastreamento.**
-- **Jogo justo**: nada que dê vantagem está à venda. O Swan Race é totalmente gratuito, sem compras.
+- **Jogos para cada idade**: os jogos grátis são para toda a família; os jogos para
+  quem é mais velho mostram a classificação indicativa na loja.
+- **Sem anúncios e sem venda de dados**: nos jogos, usamos só o Google Analytics, de
+  forma anônima, para encontrar erros.
+- **Jogo justo**: nada que dê vantagem está à venda. Os jogos grátis, como o Swan
+  Race, não têm compras; os pagos são vendidos nas lojas, como a Steam, por um preço justo.
 - **Offline primeiro**: funcionam sem internet; recursos online são opcionais.
-- **Código aberto** (GPLv3): leia, aprenda, melhore.
+- **Código aberto nos jogos grátis** (GPLv3): leia, aprenda, melhore. Os jogos pagos têm código fechado.
 - **Leves**: downloads pequenos que rodam bem em celulares comuns.
 
 **Quer colaborar?** Código, arte, modelos 3D, música, sons, traduções, relatos
